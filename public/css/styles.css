@@ -1,0 +1,36 @@
+body {
+  background-color: mediumaquamarine;
+  text-align: center;
+  font-family: 'Philosopher', sans-serif;
+  padding: 0;
+}
+
+.container {
+  background-color: #333;
+}
+
+.pad {
+  width: 200px;
+  height: 200px;
+  background-color: crimson;
+  font-size: 2em;
+  border-radius: 40px;
+  margin-top: 100px;
+  padding-top: 50px;
+  color: #fff;
+}
+
+#kick {
+  background-color: indigo;
+}
+
+#snare {
+  background-color: forestgreen;
+}
+#hi-hat{
+  background-color: darkblue;
+}
+
+.key {
+  font-size: 0.5em;
+}
