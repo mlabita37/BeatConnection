@@ -1,6 +1,8 @@
+
+
 #container {
   width: 1000px;
-  height: 500px;
+  height: 600px;
   background-color: #f3f3f3;
   margin: 100px auto;
   border-radius: 20px;
@@ -28,12 +30,18 @@
   display: inline-block;
   box-shadow: 2px 3px 10px #504A4B;
 }
-input[type="range"]{
-  -webkit-appearance: slider-vertical;
-  width: 0;
-  height: 80px;
-  margin-left: 4px;
-  margin-bottom: 5px;
+
+#mixer {
+margin-top: 20px;
+margin-left: 20px;
+}
+.bus{
+  display: inline-block;
+  margin-right: 70px;
+}
+.fader {
+  width: 60px;
+  text-align: center;
 }
 
 /*--- Second Half---*/
@@ -45,6 +53,9 @@ input[type="range"]{
 
 }
 
+label {
+  float: left;
+}
 #title-block {
   float: left;
   width: 40px;
@@ -72,17 +83,13 @@ line-height: 3em;
 
 /*--- Keyboard---*/
 #keyboard {
-  margin: 0;
-  z-index: 100;
-  overflow: auto;
-  text-align: center;
   position: relative;
+  margin-top: 280px;
 }
 
 .key {
   width: 50px;
   height: 180px;
-  background-color: #BCC6CC;
   z-index: 120;
   margin: 10px 0 0 -4px;
   display: inline-block;
@@ -107,10 +114,4 @@ line-height: 3em;
 
 .center {
   margin-left: -14px;
-}
-
-
-#kickFader {
-  -webkit-appearance: slider-vertical;
-  margin-top: 30px;
 }
