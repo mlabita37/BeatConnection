@@ -28,7 +28,7 @@ app.get('/music/hihat', function(req, res){
     readStream.pipe(res);
 });
 
-var port = 8080;
+var port = 3000;
 app.listen(port, function(){
   console.log("...listening on " + port);
 });
