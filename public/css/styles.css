@@ -1,10 +1,12 @@
-
+body {
+  font-size: 0.75em;
+}
 
 #container {
   width: 1000px;
   height: 600px;
   background-color: #f3f3f3;
-  margin: 100px auto;
+  margin: 50px auto;
   border-radius: 20px;
   overflow: auto;
   z-index: -1;
@@ -52,6 +54,11 @@ margin-left: 20px;
   text-align: center;
 
 }
+#sequencer {
+  width: 100%;
+  margin: 0 auto 100px;
+  height: 50px;
+}
 
 label {
   float: left;
@@ -80,6 +87,7 @@ line-height: 3em;
   display: inline-block;
   box-shadow: 2px 3px 6px #504A4B;
 }
+
 
 /*--- Keyboard---*/
 #keyboard {

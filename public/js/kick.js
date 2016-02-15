@@ -1,4 +1,4 @@
-console.log("...kick.js is loaded");
+console.log("...kick.js loaded");
 
 function loadKick(vol) {
   var request = new XMLHttpRequest();
@@ -14,7 +14,7 @@ function loadKick(vol) {
 
 function kickGain(){ // Grabs the value of the input slider and sets it to a volume variable
   var vol = $('#kickGain').val();
-  console.log(vol);
+  console.log("kickVol: " + vol);
   $("#kickGain").on( "change input", function () {
       var value = $(this).val();
       $('#kickVol').text(value + " Vol");
@@ -33,13 +33,12 @@ function kickLoop(){
     }
     return loop;
   });
-console.log("2nd loop: " + loop);
 return loop;
 };
 
 function kickSpeed(){ // Grabs the value of the input slider and sets it to a volume variable
   var speed = $('#kickSpeed').val();
-  console.log(speed);
+  console.log("kickRate: " + speed);
   $("#kickSpeed").on( "change input", function () {
       var value = $(this).val();
       $('#kickRate').text(value);
@@ -49,7 +48,7 @@ function kickSpeed(){ // Grabs the value of the input slider and sets it to a vo
 
 function kickDist(){ // Grabs the value of the input slider and sets it to a volume variable
   var dist = $('#kickDist').val();
-  console.log(dist);
+  console.log("kickDist: " + dist);
   $("#kickDist").on( "change input", function () {
       var value = $(this).val();
       $('#kickDistort').text(value);
@@ -59,7 +58,7 @@ function kickDist(){ // Grabs the value of the input slider and sets it to a vol
 
 function kickDelay(){
   var delay = $('#kickDelay').val();
-  console.log(delay);
+  console.log("kickDelay: " + delay);
   $("#kickDelay").on( "change input", function () {
       var value = $(this).val();
       $("#kickDelVal").text(value + " Del");

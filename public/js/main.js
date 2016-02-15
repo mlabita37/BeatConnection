@@ -1,4 +1,4 @@
-console.log("locked and loaded");
+console.log("...main.js loaded");
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 context = new AudioContext();

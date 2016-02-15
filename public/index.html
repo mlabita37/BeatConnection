@@ -13,6 +13,8 @@
     <script src="/js/snare.js"></script>
     <script src="/js/hi-hat.js"></script>
     <script src="/js/perc01.js"></script>
+    <script src="/js/buffer-loader.js"></script>
+    <script src="/js/rhythm.js"></script>
   </head>
   <body>
   <div id="container">
@@ -103,14 +105,14 @@
       </div>
 			<div id="sequencer">
       <div class="row">
-          <div class="seq"></div>
-          <div class="seq"></div>
-          <div class="seq"></div>
-          <div class="seq"></div>
-          <div class="seq"></div>
-          <div class="seq"></div>
-          <div class="seq"></div>
-          <div class="seq"></div>
+          <button type="radio" class="seq" id="kick1" value="1"></button>
+          <button type="radio" class="seq" id="kick2" value="1"></button>
+          <button type="radio" class="seq" id="kick3" value="1"></button>
+          <button type="radio" class="seq" id="kick3" value="0"></button>
+          <button type="radio" class="seq" id="kick3" value="0"></button>
+          <button type="radio" class="seq" id="kick3" value="0"></button>
+          <button type="radio" class="seq" id="kick3" value="0"></button>
+          <button type="radio" class="seq" id="kick3" value="0"></button>
         </div>
         <div class="row">
           <div class="seq"></div>
@@ -141,6 +143,10 @@
           <div class="seq"></div>
           <div class="seq"></div>
           <div class="seq"></div>
+        </div>
+        <div class="row">
+          <h3>BPM: <input id="tempo" type="text" value="120" min="0" max="280"></h3>
+          <input type="button" value="Start Loop" id="play1"/>
         </div>
 				</div>
 				<div id="keyboard">

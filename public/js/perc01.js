@@ -23,7 +23,7 @@ function clickPerc01(){
 // Trigger hi-hat on shift button
 function keydownPerc01() {
 $(window).keydown(function (e) {
-  if (e.which === 88) {
+  if (e.which === 83) {
     e.preventDefault();
     loadPerc01();
     changePadColor('#perc01', 'darkorange', '#E5E4E2;');

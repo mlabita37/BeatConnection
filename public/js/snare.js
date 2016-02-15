@@ -1,4 +1,4 @@
-console.log("snare.js loaded");
+console.log("...snare.js loaded");
 
   function loadSnare(){
   var request = new XMLHttpRequest();
