@@ -25,7 +25,6 @@ function init() {
     bufferLoader.load();
     kickValue();
     play1();
-
 }
 
 function playSound(buffer, time) {
@@ -50,6 +49,7 @@ function myLoop(bufferList) {
         kick7 = $('#kick7').val();
         kick8 = $('#kick8').val();
 
+        console.log(kick1);
 
 
     // We'll start playing the rhythm 100 milliseconds from "now"
@@ -107,12 +107,9 @@ function getTempo(){
 
 function kickValue(){
   $('button').click(function(){
-
     $(this).css('background-color', "limegreen");
-    var value = $(this).val();
-    value = 1;
-    console.log(value);
-    return value;
+    $(this).val(1);
+    console.log($(this).val());
   });
 };
 
