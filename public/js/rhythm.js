@@ -17,7 +17,8 @@ function init() {
         [
         "/music/kick",
         "/music/snare",
-        "/music/hihat"
+        "/music/hihat",
+        "/music/perc01"
         ],
         bufferLoadCompleted
     );
@@ -39,6 +40,7 @@ function myLoop(bufferList) {
     var kick = bufferList[0];
     var snare = bufferList[1];
     var hihat = bufferList[2];
+    var perc01 = bufferList[3];
 
     var kick1 = $('#kick1').val();
         kick2 = $('#kick2').val();
@@ -64,6 +66,15 @@ function myLoop(bufferList) {
         hihat6 = $('#hihat6').val();
         hihat7 = $('#hihat7').val();
         hihat8 = $('#hihat8').val();
+        perc0101 = $('#perc01-1').val();
+        perc0102 = $('#perc01-2').val();
+        perc0103 = $('#perc01-3').val();
+        perc0104 = $('#perc01-4').val();
+        perc0105 = $('#perc01-5').val();
+        perc0106 = $('#perc01-6').val();
+        perc0107 = $('#perc01-7').val();
+        perc0108 = $('#perc01-8').val();
+
 
         console.log(kick1);
 
@@ -81,9 +92,10 @@ function myLoop(bufferList) {
     for (var i=0; i < kickArray.length; i++){
       if (kickArray[i] == 1 && kickArray[i].id == "kick1"){
         playSound(kick, startTime);
-        flashYellow('kick'+(i+1));
       }else if (kickArray[i] == 1){
         playSound(kick, startTime + i*quarterNoteTime);
+        console.log('kick'+(i+1));
+        flashYellow('kick'+(i+1));
       }
     }
 
@@ -95,6 +107,8 @@ function myLoop(bufferList) {
         playSound(snare, startTime);
       }else if (snareArray[i] == 1){
         playSound(snare, startTime + i*quarterNoteTime);
+        console.log('snare'+(i+1));
+        flashYellow('snare'+(i+1));
       }
     }
 
@@ -106,6 +120,8 @@ function myLoop(bufferList) {
         playSound(hihat, startTime);
       }else if (hiHatArray[i] == 1){
         playSound(hihat, startTime + i*quarterNoteTime);
+        console.log('hihat'+(i+1));
+        flashYellow('hihat'+(i+1));
       }
     }
 
@@ -113,7 +129,23 @@ function myLoop(bufferList) {
     // for (var i = 0; i < 32; ++i) {
     //     playSound(hihat, startTime + i*0.25*quarterNoteTime);
     // }
+
+
+    // Perc01
+    var perc01Array = [perc0101, perc0102, perc0103, perc0104, perc0105, perc0106, perc0107, perc0108];
+
+    for (var i=0; i < perc01Array.length; i++){
+      if (perc01Array[i] == 1 && perc01Array[i].id == "perc01-1"){
+        playSound(hihat, startTime);
+      }else if (perc01Array[i] == 1){
+        playSound(perc01, startTime + i*quarterNoteTime);
+        console.log('perc01-'+(i+1));
+        flashYellow('perc01-'+(i+1));
+      }
+    }
 }
+
+
 
 function bufferLoadCompleted() {
 
@@ -128,7 +160,6 @@ function getValue(){
   $('button').click(function(){
     value = $(this).val();
     if (value == 0){
-
     $(this).css('background-color', "limegreen");
     $(this).val(1);
   }else{
@@ -149,6 +180,6 @@ function flashYellow(drum){
   console.log("flash is working");
   $('#' + drum).css('background-color', 'yellow');
   setTimeout(function(){
-    $('#' + drum).css('background-color', 'blue');
-  }, 750);
+    $('#' + drum).css('background-color', 'limegreen');
+  }, 1000);
 };
