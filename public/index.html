@@ -16,79 +16,80 @@
     <div class="pad" id="kick"></div>
     <div class="pad" id="snare"></div>
     <div class="pad" id="hi-hat"></div>
-    <div class="pad"></div>
+    <div class="pad" id="perc01"></div>
     <div class="pad"></div>
     <div class="pad"></div>
 		<div id="mixer">
+
 			<div class="bus">
-					<h5>Kick</h5>
-					<div class="fader">
-					<input id="kickGain" type="range" min="0" max="1" step="0.1">
-					<div id="kickVol">0.5 Vol</div>
-					</div>
-					<div class="fader">
-					<input id="kickSpeed" type="range" min="0" max="10" step="0.25" value="1">
-					<div id="kickRate">0.8</div>
-					</div>
-					<div class="fader">
-					<input id="kickDist" type="range" min="0" max="2" step="0.1" value="1">
-					<div id="kickDistVal">0</div>
+				<h5>Kick</h5>
+				<div class="fader">
+          <div id="kickVol">0.5 Vol</div>
+				  <input id="kickGain" type="range" min="0" max="2" step="0.1">
 				</div>
 				<div class="fader">
-					<input id="kickDelay" type="range" min="0" max="5" step="0.1" value="3.0">
-					<div id="kickDelVal">0</div>
+          <div id="kickRate">0.8 Rate</div>
+				  <input id="kickSpeed" type="range" min="0" max="10" step="0.25" value="1">
 				</div>
 				<div class="fader">
-					<button id="kickLoop" type="button">LOOP</button>
-				</div>
+          <div id="kickDistVal">0 Dist</div>
+				  <input id="kickDist" type="range" min="0" max="1000" step="100" value="0">
+			  </div>
+			  <div class="fader">
+          <div id="kickDelVal">0 Del</div>
+				  <input id="kickDelay" type="range" min="0" max="2" step="0.1" value="0">
+			  </div>
+			    <div class="fader">
+				  <button id="kickLoop" type="button">LOOP</button>
+			  </div>
 			</div>
-			<div class="bus">
-					<h5>Snare</h5>
-					<div class="fader">
+
+		<div class="bus">
+				<h5>Snare</h5>
+				<div class="fader">
+          <div id="SnareVol">0</div>
 					<input id="snareGain" type="range" min="0" max="1" step="0.1" value="0.8">
-					<div id="HiHatVol">0</div>
 				</div>
 				<div class="fader">
+          <div id="snareRate">0</div>
 					<input id="snareSpeed" type="range" min="0" max="10" step="0.25" value="1">
-					<div id="snareRate">0</div>
 				</div>
-			<div class="fader">
-			<input id="kickDist" type="range" min="0" max="2" step="0.1" value="1">
-			<div id="snareDistVal">0</div>
-		</div>
-		<div class="fader">
-			<input id="snareDelay" type="range" min="0" max="5" step="0.1" value="3.0">
-			<div id="snareDelVal">0</div>
-		</div>
+			  <div class="fader">
+          <div id="snareDistVal">0</div>
+			    <input id="snareDist" type="range" min="0" max="2" step="0.1" value="1">
+		    </div>
+		    <div class="fader">
+          <div id="snareDelVal">0</div>
+			    <input id="snareDelay" type="range" min="0" max="5" step="0.1" value="3.0">
+		    </div>
 				<div class="fader">
 					<button id="snareLoop"type="button">LOOP</button>
 				</div>
 		</div>
 			<div class="bus">
-					<h5>Hi-Hat</h5>
-					<p>Gain</p>
-					<div class="fader">
+				<h5>Hi-Hat</h5>
+				<div class="fader">
+          <div id="hiHatVol">0.5</div>
 					<input id="hiHatGain" type="range" min="0" max="1" step="0.1">
-					<div id="hiHatVol">0.5</div>
 				</div>
 				<div class="fader">
+          <div id="hiHatRate">0</div>
 					<input id="hiHatSpeed" type="range" min="0" max="10" step="0.25" value="1">
-					<div id="hiHatRate">0</div>
 				</div>
-			<div class="fader">
-			<input id="kickDist" type="range" min="0" max="2" step="0.1" value="1">
-			<div id="hiHatDistVal">0</div>
-		</div>
-		<div class="fader">
-			<input id="hiHatDelay" type="range" min="0" max="5" step="0.1" value="3.0">
-			<div id="hiHatDel">0</div>
-		</div>
+			  <div class="fader">
+          <div id="hiHatDistVal">0</div>
+			    <input id="kickDist" type="range" min="0" max="2" step="0.1" value="1">
+		    </div>
+		    <div class="fader">
+          <div id="hiHatDel">0</div>
+			    <input id="hiHatDelay" type="range" min="0" max="5" step="0.1" value="3.0">
+		    </div>
 				<div class="fader">
 					<button id="hiHatLoop"type="button">LOOP</button>
 				</div>
 		</div>
-	</div>
   </div>
+</div>
     <div id="col-2">
       <div id="title-block">
         <p class="titles">Kick</p>
