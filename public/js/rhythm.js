@@ -52,7 +52,7 @@ function myLoop(bufferList) {
         console.log(kick1);
 
 
-    // We'll start playing the rhythm 100 milliseconds from "now"
+    // Start playing the rhythm 100 milliseconds from "now"
     var startTime = context.currentTime + 0.100;
 
     var tempo = getTempo(); // BPM (beats per minute)
@@ -78,11 +78,32 @@ function myLoop(bufferList) {
     }else{
     console.log("3: nothing");
     }
+    if(kick4 == 1){
     playSound(kick, startTime + 3*quarterNoteTime);
+    flashYellow('kick4');
+    }else{
+    console.log('4: nothing');
+    }
+    if(kick5 == 1){
     playSound(kick, startTime + 4*quarterNoteTime);
+    }else{
+    console.log('5: nothing');
+    }
+    if(kick6 == 1){
     playSound(kick, startTime + 5*quarterNoteTime);
+    }else{
+    console.log('6: nothing');
+    }
+    if(kick7 == 1){
     playSound(kick, startTime + 6*quarterNoteTime);
+    }else{
+    console.log('7: nothing');
+    }
+    if(kick8 == 1){
     playSound(kick, startTime + 7*quarterNoteTime);
+    }else{
+    console.log('8: nothing');
+    }
 
     // Play the snare drum on beats 2, 4
     playSound(snare, startTime + quarterNoteTime);
