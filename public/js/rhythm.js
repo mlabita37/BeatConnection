@@ -23,7 +23,7 @@ function init() {
     );
 
     bufferLoader.load();
-    kickValue();
+    getValue();
     play1();
 }
 
@@ -48,6 +48,22 @@ function myLoop(bufferList) {
         kick6 = $('#kick6').val();
         kick7 = $('#kick7').val();
         kick8 = $('#kick8').val();
+        snare1 = $('#snare1').val();
+        snare2 = $('#snare2').val();
+        snare3 = $('#snare3').val();
+        snare4 = $('#snare4').val();
+        snare5 = $('#snare5').val();
+        snare6 = $('#snare6').val();
+        snare7 = $('#snare7').val();
+        snare8 = $('#snare8').val();
+        hihat1 = $('#hihat1').val();
+        hihat2 = $('#hihat2').val();
+        hihat3 = $('#hihat3').val();
+        hihat4 = $('#hihat4').val();
+        hihat5 = $('#hihat5').val();
+        hihat6 = $('#hihat6').val();
+        hihat7 = $('#hihat7').val();
+        hihat8 = $('#hihat8').val();
 
         console.log(kick1);
 
@@ -59,62 +75,44 @@ function myLoop(bufferList) {
     console.log(tempo);
     var quarterNoteTime = 60 / tempo;
 
-    // Play the kick drum on beats 1, 2, 3, 4, 5, 6, 7, 8
-    if (kick1 == 1){
-      playSound(kick, startTime);
-      flashYellow('kick1');
-    }else{
-      console.log('1: nothing');
-    }
-    if (kick2 == 1) {
-    playSound(kick, startTime + quarterNoteTime);
-    flashYellow('kick2');
-    }else{
-    console.log('2: nothing');
-    }
-    if(kick3 == 1){
-    playSound(kick, startTime + 2*quarterNoteTime);
-    flashYellow('kick3');
-    }else{
-    console.log("3: nothing");
-    }
-    if(kick4 == 1){
-    playSound(kick, startTime + 3*quarterNoteTime);
-    flashYellow('kick4');
-    }else{
-    console.log('4: nothing');
-    }
-    if(kick5 == 1){
-    playSound(kick, startTime + 4*quarterNoteTime);
-    }else{
-    console.log('5: nothing');
-    }
-    if(kick6 == 1){
-    playSound(kick, startTime + 5*quarterNoteTime);
-    }else{
-    console.log('6: nothing');
-    }
-    if(kick7 == 1){
-    playSound(kick, startTime + 6*quarterNoteTime);
-    }else{
-    console.log('7: nothing');
-    }
-    if(kick8 == 1){
-    playSound(kick, startTime + 7*quarterNoteTime);
-    }else{
-    console.log('8: nothing');
+    // Kick
+    var kickArray = [kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8];
+
+    for (var i=0; i < kickArray.length; i++){
+      if (kickArray[i] == 1 && kickArray[i].id == "kick1"){
+        playSound(kick, startTime);
+        flashYellow('kick'+(i+1));
+      }else if (kickArray[i] == 1){
+        playSound(kick, startTime + i*quarterNoteTime);
+      }
     }
 
-    // Play the snare drum on beats 2, 4
-    playSound(snare, startTime + quarterNoteTime);
-    playSound(snare, startTime + 3*quarterNoteTime);
-    playSound(snare, startTime + 5*quarterNoteTime);
-    playSound(snare, startTime + 7*quarterNoteTime);
+    // Snare
+    var snareArray = [snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8];
+
+    for (var i=0; i < snareArray.length; i++){
+      if (snareArray[i] == 1 && snareArray[i].id == "snare1"){
+        playSound(snare, startTime);
+      }else if (snareArray[i] == 1){
+        playSound(snare, startTime + i*quarterNoteTime);
+      }
+    }
+
+    // Hi-hat
+    var hiHatArray = [hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8];
+
+    for (var i=0; i < hiHatArray.length; i++){
+      if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
+        playSound(hihat, startTime);
+      }else if (hiHatArray[i] == 1){
+        playSound(hihat, startTime + i*quarterNoteTime);
+      }
+    }
 
     // Play the hi-hat every 16th note.
-    for (var i = 0; i < 32; ++i) {
-        playSound(hihat, startTime + i*0.25*quarterNoteTime);
-    }
+    // for (var i = 0; i < 32; ++i) {
+    //     playSound(hihat, startTime + i*0.25*quarterNoteTime);
+    // }
 }
 
 function bufferLoadCompleted() {
@@ -126,11 +124,18 @@ function getTempo(){
   return tempo;
 }
 
-function kickValue(){
+function getValue(){
   $('button').click(function(){
+    value = $(this).val();
+    if (value == 0){
+
     $(this).css('background-color', "limegreen");
     $(this).val(1);
-    console.log($(this).val());
+  }else{
+    $(this).css('background-color', "#D1D0CE");
+    $(this).val(0);
+  }
+  console.log($(this).val());
   });
 };
 
@@ -141,8 +146,9 @@ function play1(){
 };
 
 function flashYellow(drum){
+  console.log("flash is working");
   $('#' + drum).css('background-color', 'yellow');
   setTimeout(function(){
-    $('#' + drum).css('background-color', 'limegreen');
+    $('#' + drum).css('background-color', 'blue');
   }, 750);
 };
