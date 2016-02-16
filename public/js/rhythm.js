@@ -189,7 +189,7 @@ function isSixteenths(){
   $('#sixteenths').click(function(){
     sixteenths = !sixteenths;
     if (sixteenths == true){
-      $('#sixteenths').css('background-color', 'limegreen');
+      $('#sixteenths').css('background-color', 'cyan');
     }else $('#sixteenths').css('background-color', 'white');
   });
 }
@@ -232,7 +232,13 @@ function flashYellow(drum){
       setTimeout(function(){
         $('#' + drum).css('background-color', ' #FFFF00');
         setTimeout(function(){
-          $('#' + drum).css('background-color', 'limegreen');
+          $('#' + drum).css('background-color', 'cyan');
+          setTimeout(function(){
+            $('#' + drum).css('background-color', 'darkorange');
+            setTimeout(function(){
+              $('#' + drum).css('background-color', 'limegreen');
+            }, 500);
+          }, 500);
         }, 500);
       }, 500);
     }, 500);
