@@ -83,7 +83,6 @@ function myLoop(bufferList) {
         perc0108 = $('#perc01-8').val();
 
 
-        console.log(kick1);
 
 
     // Start playing the rhythm 100 milliseconds from "now"
@@ -101,7 +100,6 @@ function myLoop(bufferList) {
         playSound(kick, startTime);
       }else if (kickArray[i] == 1){
         playSound(kick, startTime + i*quarterNoteTime);
-        console.log('kick'+(i+1));
         flashYellow('kick'+(i+1));
       }
     }
@@ -114,7 +112,6 @@ function myLoop(bufferList) {
         playSound(snare, startTime);
       }else if (snareArray[i] == 1){
         playSound(snare, startTime + i*quarterNoteTime);
-        console.log('snare'+(i+1));
         flashYellow('snare'+(i+1));
       }
     }
@@ -127,7 +124,6 @@ function myLoop(bufferList) {
         playSound(hihat, startTime);
       }else if (hiHatArray[i] == 1){
         playSound(hihat, startTime + i*quarterNoteTime);
-        console.log('hihat'+(i+1));
         flashYellow('hihat'+(i+1));
       }
     }
@@ -146,7 +142,6 @@ function myLoop(bufferList) {
         playSound(hihat, startTime);
       }else if (perc01Array[i] == 1){
         playSound(perc01, startTime + i*quarterNoteTime);
-        console.log('perc01-'+(i+1));
         flashYellow('perc01-'+(i+1));
       }
     }
@@ -188,7 +183,6 @@ function playLoop(){
 function stopLoop(){
   $('#stopLoop').click(function(){
     console.log('Stop button working');
-    bool = false;
     clearInterval(interval);
   });
 }
