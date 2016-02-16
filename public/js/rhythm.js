@@ -26,6 +26,7 @@ function init() {
     bufferLoader.load();
     getValue();
     playLoop();
+    stopLoop();
 }
 
 function playSound(buffer, time) {
@@ -35,7 +36,13 @@ function playSound(buffer, time) {
     source.start(time);
 }
 
-// Plays Rhythm 1
+function stopSound(buffer, time) {
+  var source = context.createBufferSource();
+  source.connect(context.destination);
+  source.stop(time);
+}
+
+// Plays Loop 1
 function myLoop(bufferList) {
     var kick = bufferList[0];
     var snare = bufferList[1];
@@ -168,11 +175,23 @@ function getValue(){
   });
 };
 
+var interval;
 function playLoop(){
-  $('#play1').click(function(){
+  $('#playLoop').click(function(){
     myLoop(bufferLoader.bufferList);
+    interval = setInterval(function(){
+    myLoop(bufferLoader.bufferList);
+  }, 4000);
   });
 };
+
+function stopLoop(){
+  $('#stopLoop').click(function(){
+    console.log('Stop button working');
+    bool = false;
+    clearInterval(interval);
+  });
+}
 
 function flashYellow(drum){
   console.log("flash is working");
