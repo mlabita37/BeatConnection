@@ -25,7 +25,7 @@ function init() {
 
     bufferLoader.load();
     getValue();
-    play1();
+    playLoop();
 }
 
 function playSound(buffer, time) {
@@ -145,8 +145,6 @@ function myLoop(bufferList) {
     }
 }
 
-
-
 function bufferLoadCompleted() {
 
 }
@@ -170,7 +168,7 @@ function getValue(){
   });
 };
 
-function play1(){
+function playLoop(){
   $('#play1').click(function(){
     myLoop(bufferLoader.bufferList);
   });
@@ -178,8 +176,17 @@ function play1(){
 
 function flashYellow(drum){
   console.log("flash is working");
-  $('#' + drum).css('background-color', 'yellow');
+  $('#' + drum).css('background-color', '#4D4DFF');
   setTimeout(function(){
-    $('#' + drum).css('background-color', 'limegreen');
-  }, 1000);
+    $('#' + drum).css('background-color', '#993CF3');
+    setTimeout(function(){
+      $('#' + drum).css('background-color', ' #FE0001');
+      setTimeout(function(){
+        $('#' + drum).css('background-color', ' #FFFF00');
+        setTimeout(function(){
+          $('#' + drum).css('background-color', 'limegreen');
+        }, 500);
+      }, 500);
+    }, 500);
+  }, 500);
 };
