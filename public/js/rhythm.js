@@ -27,6 +27,7 @@ function init() {
     getValue();
     playLoop();
     stopLoop();
+    isSixteenths();
 }
 
 function playSound(buffer, time) {
@@ -116,9 +117,20 @@ function myLoop(bufferList) {
       }
     }
 
-    // Hi-hat
-    var hiHatArray = [hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8];
+    //Hi-hat
+    if (sixteenths == true){
+    var hiHatArray = [hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8, hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8, hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8, hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8];
 
+    for (var i=0; i < hiHatArray.length * 2; i++){
+      if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
+        playSound(hihat, startTime);
+      }else if (hiHatArray[i] == 1){
+        playSound(hihat, startTime + i*0.25*quarterNoteTime);
+        flashYellow('hihat'+(i+1));
+      }
+    };
+    }else{
+    var hiHatArray = [hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8];
     for (var i=0; i < hiHatArray.length; i++){
       if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
         playSound(hihat, startTime);
@@ -126,9 +138,10 @@ function myLoop(bufferList) {
         playSound(hihat, startTime + i*quarterNoteTime);
         flashYellow('hihat'+(i+1));
       }
+    };
     }
 
-    // Play the hi-hat every 16th note.
+    //  Play the hi-hat every 16th note.
     // for (var i = 0; i < 32; ++i) {
     //     playSound(hihat, startTime + i*0.25*quarterNoteTime);
     // }
@@ -145,6 +158,7 @@ function myLoop(bufferList) {
         flashYellow('perc01-'+(i+1));
       }
     }
+
 }
 
 function bufferLoadCompleted() {
@@ -158,7 +172,7 @@ function getTempo(){
 
 function getValue(){
   $('button').click(function(){
-    value = $(this).val();
+    var value = $(this).val();
     if (value == 0){
     $(this).css('background-color', "limegreen");
     $(this).val(1);
@@ -170,15 +184,36 @@ function getValue(){
   });
 };
 
+var sixteenths = false;
+function isSixteenths(){
+  $('#sixteenths').click(function(){
+    sixteenths = !sixteenths;
+    if (sixteenths == true){
+      $('#sixteenths').css('background-color', 'limegreen');
+    }else $('#sixteenths').css('background-color', 'white');
+  });
+}
+
 var interval;
 function playLoop(){
   $('#playLoop').click(function(){
+    var time = getTime();
+    console.log(time);
     myLoop(bufferLoader.bufferList);
     interval = setInterval(function(){
     myLoop(bufferLoader.bufferList);
-  }, 4000);
+  }, time);
   });
 };
+
+function getTime(){
+  var tempo = getTempo();
+  var bar = 8/tempo;
+  var time = bar * 60;
+  time = time * 1000;
+  console.log(time);
+  return time;
+}
 
 function stopLoop(){
   $('#stopLoop').click(function(){
