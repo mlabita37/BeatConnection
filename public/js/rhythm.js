@@ -31,6 +31,7 @@ function init() {
     allHiHat();
     allSnare();
     allKick();
+    clearAll();
 }
 
 function playSound(buffer, time) {
@@ -101,14 +102,22 @@ function myLoop(bufferList) {
         hihat14 = $('#hihat14').val(),
         hihat15 = $('#hihat15').val(),
         hihat16 = $('#hihat16').val(),
-        perc0101 = $('#perc01-1').val(),
-        perc0102 = $('#perc01-2').val(),
-        perc0103 = $('#perc01-3').val(),
-        perc0104 = $('#perc01-4').val(),
-        perc0105 = $('#perc01-5').val(),
-        perc0106 = $('#perc01-6').val(),
-        perc0107 = $('#perc01-7').val(),
-        perc0108 = $('#perc01-8').val();
+        perc1 = $('#perc1').val(),
+        perc2 = $('#perc2').val(),
+        perc3 = $('#perc3').val(),
+        perc4 = $('#perc4').val(),
+        perc5 = $('#perc5').val(),
+        perc6 = $('#perc6').val(),
+        perc7 = $('#perc7').val(),
+        perc8 = $('#perc8').val();
+        perc9 = $('#perc1').val(),
+        perc10 = $('#perc2').val(),
+        perc11 = $('#perc3').val(),
+        perc12 = $('#perc4').val(),
+        perc13 = $('#perc5').val(),
+        perc14 = $('#perc6').val(),
+        perc15 = $('#perc7').val(),
+        perc16 = $('#perc8').val();
 
 
 
@@ -120,31 +129,81 @@ function myLoop(bufferList) {
     console.log(tempo);
     var quarterNoteTime = 60 / tempo;
 
-    // Kick
-    var kickArray = [kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8, kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16];
+    // KICK
+    if (sixteenths == true){
+    var kickArray = [
+      kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+      kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16,
+      kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+      kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16,
+      kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+      kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16,
+      kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+      kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16
+   ];
 
-    for (var i=0; i < kickArray.length; i++){
+    for (var i=0; i < kickArray.length * 2; i++){
       if (kickArray[i] == 1 && kickArray[i].id == "kick1"){
         playSound(kick, startTime);
       }else if (kickArray[i] == 1){
-        playSound(kick, startTime + i*quarterNoteTime);
+        playSound(kick, startTime + i*0.25*quarterNoteTime);
         flashYellow('kick'+(i+1));
       }
+    };
+    }else{
+      var kickArray = [
+        kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+        kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16
+      ];
+      for (var i=0; i < kickArray.length; i++){
+        if (kickArray[i] == 1 && kickArray[i].id == "kick1"){
+          playSound(kick, startTime);
+        }else if (kickArray[i] == 1){
+          playSound(kick, startTime + i*quarterNoteTime);
+          flashYellow('kick'+(i+1));
+        }
+      };
     }
 
-    // Snare
-    var snareArray = [snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8, snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16];
+    // SNARE
+    if (sixteenths == true){
+    var snareArray = [
+    snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+    snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16,
+    snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+    snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16,
+    snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+    snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16,
+    snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+    snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16
+    ];
 
-    for (var i=0; i < snareArray.length; i++){
-      if (snareArray[i] == 1 && snareArray[i].id == "snare1"){
-        playSound(snare, startTime);
-      }else if (snareArray[i] == 1){
-        playSound(snare, startTime + i*quarterNoteTime);
-        flashYellow('snare'+(i+1));
-      }
-    }
+        for (var i=0; i < snareArray.length * 2; i++){
+          if (snareArray[i] == 1 && snareArray[i].id == "snare1"){
+            playSound(snare, startTime);
+          }else if (snareArray[i] == 1){
+            playSound(snare, startTime + i*0.25*quarterNoteTime);
+            flashYellow('snare'+(i+1));
+          }
+        };
+        }else{
+          var snareArray = [
+            snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+            snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16
+          ];
+          for (var i=0; i < snareArray.length; i++){
+            if (snareArray[i] == 1 && snareArray[i].id == "snare1"){
+              playSound(snare, startTime);
+            }else if (snareArray[i] == 1){
+              playSound(snare, startTime + i*quarterNoteTime);
+              flashYellow('snare'+(i+1));
+            }
+          };
+        }
 
-    //Hi-hat
+
+
+    //HI-HAT
     if (sixteenths == true){
     var hiHatArray = [
       hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
@@ -187,14 +246,14 @@ function myLoop(bufferList) {
 
 
     // Perc01
-    var perc01Array = [perc0101, perc0102, perc0103, perc0104, perc0105, perc0106, perc0107, perc0108];
+    var percArray = [perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8, perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16];
 
-    for (var i=0; i < perc01Array.length; i++){
-      if (perc01Array[i] == 1 && perc01Array[i].id == "perc01-1"){
+    for (var i=0; i < percArray.length; i++){
+      if (percArray[i] == 1 && percArray[i].id == "perc1"){
         playSound(hihat, startTime);
-      }else if (perc01Array[i] == 1){
+      }else if (percArray[i] == 1){
         playSound(perc01, startTime + i*quarterNoteTime);
-        flashYellow('perc01-'+(i+1));
+        flashYellow('perc1-'+(i+1));
       }
     }
 
@@ -210,7 +269,7 @@ function getTempo(){
 }
 
 function getValue(){
-  $('button').click(function(){
+  $('.seq').click(function(){
     var value = $(this).val();
     if (value == 0){
     $(this).css('background-color', "limegreen");
@@ -312,6 +371,16 @@ function allKick(){
 });
 }
 
+function clearAll(){
+  $('#clearAll').click(function(){
+    var all = $('.seq');
+      for (i=0; i<all.length; i++){
+        $(all).val(0);
+        $(all).css('background-color', '#D1D0CE');
+      }
+  });
+}
+
 
 function flashYellow(drum){
   console.log("flash is working");
@@ -330,6 +399,30 @@ function flashYellow(drum){
               $('#' + drum).css('background-color', 'yellow');
               setTimeout(function(){
                 $('#' + drum).css('background-color', 'limegreen');
+                setTimeout(function(){
+                  $('#' + drum).css('background-color', 'magenta');
+                  setTimeout(function(){
+                    $('#' + drum).css('background-color', 'tomato');
+                    setTimeout(function(){
+                      $('#' + drum).css('background-color', 'gold');
+                      setTimeout(function(){
+                        $('#' + drum).css('background-color', 'lightblue');
+                        setTimeout(function(){
+                          $('#' + drum).css('background-color', 'mediumspringgreen');
+                          setTimeout(function(){
+                            $('#' + drum).css('background-color', 'darkorange');
+                            setTimeout(function(){
+                              $('#' + drum).css('background-color', 'red');
+                              setTimeout(function(){
+                                $('#' + drum).css('background-color', 'limegreen');
+                              }, 500);
+                            }, 500);
+                          }, 500);
+                        }, 500);
+                      }, 500);
+                    }, 500);
+                  }, 500);
+                }, 500);
               }, 500);
             }, 500);
           }, 500);
