@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 		<script src="/js/main.js"></script>
     <script src="/js/kick.js"></script>
     <script src="/js/snare.js"></script>
@@ -24,7 +25,8 @@
     <button id="signup">Signup</button>
     <button id="login">Login</button>
   </header>
-
+<% include ./partials/login %>
+<% include ./partials/signup %>
   <div id="main-container">
     <div id="main-sequencer">
       <div class="row">
@@ -150,6 +152,7 @@
       <div class="row">
 
         <h3>BPM: <input id="tempo" type="text" value="120" min="0" max="280"></h3>
+        <button type="button" id="save">Save</button>
         <input type="button" class="controls" value="Clear All" id="clearAll"/>
         <input type="button" class="controls" value="Sixteenths" id="sixteenths"/>
         <input type="button" class="controls" value="Eighths" id="eighths"/>

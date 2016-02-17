@@ -3,13 +3,20 @@ console.log('...login.js loaded');
 function openLogin(){
 $("#login").on("click", function() {
   console.log("This modal is working");
-  $("#modal").toggle();
+  $("#login-modal").toggle();
+});
+};
+
+function openLogin(){
+$("#signup").on("click", function() {
+  console.log("This modal is working");
+  $("#signup-modal").toggle();
 });
 };
 
 function closeLogin(){
 $("#close").on("click", function() {
-  $("#modal").toggle();
+  $("#login-modal").toggle();
 });
 }
 
@@ -27,7 +34,7 @@ function createUser(userData, callback){
 }
 
 function setCreateUserFormHandler(){
-  $('form#sign-up-time').on('submit', function(e){
+  $('form#signup-form').on('submit', function(e){
     e.preventDefault();
 
     // Obtain the username from form
@@ -63,23 +70,6 @@ function updateUser(userData, callback){
   });
 }
 
-function setUpdateUserFormHandler(){
-  $('form#update-time').on('submit', function(e){
-    e.preventDefault();
-
-    var bioField = $(this).find('input[name="bio"]');
-    var bioText = bioField.val();
-    bioField.val('');
-
-    var userData = {bio: bioText};
-
-    updateUser(userData, function(user){
-      console.log(user);
-    });
-
-  });
-}
-
 function logInUser(usernameAttempt, passwordAttempt, callback){
   $.ajax({
     method: 'post',
@@ -92,7 +82,7 @@ function logInUser(usernameAttempt, passwordAttempt, callback){
 }
 
 function setLogInFormHandler(){
-  $('form#log-in-time').on('submit', function(e){
+  $('form#login-form').on('submit', function(e){
     e.preventDefault();
 
     var usernameField = $(this).find('input[name="username"]');
@@ -116,7 +106,6 @@ function setLogInFormHandler(){
 }
 
 $(function(){
-  setUpdateUserFormHandler();
   setCreateUserFormHandler();
   setLogInFormHandler();
   openLogin();
