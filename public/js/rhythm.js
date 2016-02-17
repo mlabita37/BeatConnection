@@ -28,6 +28,9 @@ function init() {
     playLoop();
     stopLoop();
     isSixteenths();
+    allHiHat();
+    allSnare();
+    allKick();
 }
 
 function playSound(buffer, time) {
@@ -37,10 +40,10 @@ function playSound(buffer, time) {
     source.start(time);
 }
 
-function stopSound(buffer, time) {
+function stopSound() {
   var source = context.createBufferSource();
   source.connect(context.destination);
-  source.stop(time);
+  source.disconnect(context.destination);
 }
 
 // Plays Loop 1
@@ -50,51 +53,75 @@ function myLoop(bufferList) {
     var hihat = bufferList[2];
     var perc01 = bufferList[3];
 
-    var kick1 = $('#kick1').val();
-        kick2 = $('#kick2').val();
-        kick3 = $('#kick3').val();
-        kick4 = $('#kick4').val();
-        kick5 = $('#kick5').val();
-        kick6 = $('#kick6').val();
-        kick7 = $('#kick7').val();
-        kick8 = $('#kick8').val();
-        snare1 = $('#snare1').val();
-        snare2 = $('#snare2').val();
-        snare3 = $('#snare3').val();
-        snare4 = $('#snare4').val();
-        snare5 = $('#snare5').val();
-        snare6 = $('#snare6').val();
-        snare7 = $('#snare7').val();
-        snare8 = $('#snare8').val();
-        hihat1 = $('#hihat1').val();
-        hihat2 = $('#hihat2').val();
-        hihat3 = $('#hihat3').val();
-        hihat4 = $('#hihat4').val();
-        hihat5 = $('#hihat5').val();
-        hihat6 = $('#hihat6').val();
-        hihat7 = $('#hihat7').val();
-        hihat8 = $('#hihat8').val();
-        perc0101 = $('#perc01-1').val();
-        perc0102 = $('#perc01-2').val();
-        perc0103 = $('#perc01-3').val();
-        perc0104 = $('#perc01-4').val();
-        perc0105 = $('#perc01-5').val();
-        perc0106 = $('#perc01-6').val();
-        perc0107 = $('#perc01-7').val();
+    var kick1 = $('#kick1').val(),
+        kick2 = $('#kick2').val(),
+        kick3 = $('#kick3').val(),
+        kick4 = $('#kick4').val(),
+        kick5 = $('#kick5').val(),
+        kick6 = $('#kick6').val(),
+        kick7 = $('#kick7').val(),
+        kick8 = $('#kick8').val(),
+        kick9 = $('#kick9').val(),
+        kick10 = $('#kick10').val(),
+        kick11 = $('#kick11').val(),
+        kick12 = $('#kick12').val(),
+        kick13 = $('#kick13').val(),
+        kick14 = $('#kick14').val(),
+        kick15 = $('#kick15').val(),
+        kick16 = $('#kick16').val(),
+        snare1 = $('#snare1').val(),
+        snare2 = $('#snare2').val(),
+        snare3 = $('#snare3').val(),
+        snare4 = $('#snare4').val(),
+        snare5 = $('#snare5').val(),
+        snare6 = $('#snare6').val(),
+        snare7 = $('#snare7').val(),
+        snare8 = $('#snare8').val(),
+        snare9 = $('#snare9').val(),
+        snare10 = $('#snare10').val(),
+        snare11 = $('#snare11').val(),
+        snare12 = $('#snare12').val(),
+        snare13 = $('#snare13').val(),
+        snare14 = $('#snare14').val(),
+        snare15 = $('#snare15').val(),
+        snare16 = $('#snare16').val(),
+        hihat1 = $('#hihat1').val(),
+        hihat2 = $('#hihat2').val(),
+        hihat3 = $('#hihat3').val(),
+        hihat4 = $('#hihat4').val(),
+        hihat5 = $('#hihat5').val(),
+        hihat6 = $('#hihat6').val(),
+        hihat7 = $('#hihat7').val(),
+        hihat8 = $('#hihat8').val(),
+        hihat9 = $('#hihat9').val(),
+        hihat10 = $('#hihat10').val(),
+        hihat11 = $('#hihat11').val(),
+        hihat12 = $('#hihat12').val(),
+        hihat13 = $('#hihat13').val(),
+        hihat14 = $('#hihat14').val(),
+        hihat15 = $('#hihat15').val(),
+        hihat16 = $('#hihat16').val(),
+        perc0101 = $('#perc01-1').val(),
+        perc0102 = $('#perc01-2').val(),
+        perc0103 = $('#perc01-3').val(),
+        perc0104 = $('#perc01-4').val(),
+        perc0105 = $('#perc01-5').val(),
+        perc0106 = $('#perc01-6').val(),
+        perc0107 = $('#perc01-7').val(),
         perc0108 = $('#perc01-8').val();
 
 
 
 
     // Start playing the rhythm 100 milliseconds from "now"
-    var startTime = context.currentTime + 0.100;
+    var startTime = context.currentTime;
 
     var tempo = getTempo(); // BPM (beats per minute)
     console.log(tempo);
     var quarterNoteTime = 60 / tempo;
 
     // Kick
-    var kickArray = [kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8];
+    var kickArray = [kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8, kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16];
 
     for (var i=0; i < kickArray.length; i++){
       if (kickArray[i] == 1 && kickArray[i].id == "kick1"){
@@ -106,7 +133,7 @@ function myLoop(bufferList) {
     }
 
     // Snare
-    var snareArray = [snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8];
+    var snareArray = [snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8, snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16];
 
     for (var i=0; i < snareArray.length; i++){
       if (snareArray[i] == 1 && snareArray[i].id == "snare1"){
@@ -119,7 +146,16 @@ function myLoop(bufferList) {
 
     //Hi-hat
     if (sixteenths == true){
-    var hiHatArray = [hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8, hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8, hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8, hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8];
+    var hiHatArray = [
+      hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+      hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16,
+      hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+      hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16,
+      hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+      hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16,
+      hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+      hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16
+   ];
 
     for (var i=0; i < hiHatArray.length * 2; i++){
       if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
@@ -130,15 +166,18 @@ function myLoop(bufferList) {
       }
     };
     }else{
-    var hiHatArray = [hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8];
-    for (var i=0; i < hiHatArray.length; i++){
-      if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
-        playSound(hihat, startTime);
-      }else if (hiHatArray[i] == 1){
-        playSound(hihat, startTime + i*quarterNoteTime);
-        flashYellow('hihat'+(i+1));
-      }
-    };
+      var hiHatArray = [
+        hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+        hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16
+      ];
+      for (var i=0; i < hiHatArray.length; i++){
+        if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
+          playSound(hihat, startTime);
+        }else if (hiHatArray[i] == 1){
+          playSound(hihat, startTime + i*quarterNoteTime);
+          flashYellow('hihat'+(i+1));
+        }
+      };
     }
 
     //  Play the hi-hat every 16th note.
@@ -210,7 +249,7 @@ function getTime(){
   var tempo = getTempo();
   var bar = 8/tempo;
   var time = bar * 60;
-  time = time * 1000;
+  time = time * 2000;
   console.log(time);
   return time;
 }
@@ -221,6 +260,58 @@ function stopLoop(){
     clearInterval(interval);
   });
 }
+
+function allHiHat(){
+  var bool = false;
+  $('#allHiHat').click(function(){
+    bool = !bool;
+    var hihat = $('.hihat');
+    if (bool == true){
+    for(i=0; i < hihat.length; i++){
+      $(hihat).val(1);
+      $(hihat).css('background-color', 'limegreen');
+    }
+  }else {
+    $(hihat).val(0);
+    $(hihat).css('background-color', '#D1D0CE');
+  }
+});
+}
+
+function allSnare(){
+  var bool = false;
+  $('#allSnare').click(function(){
+    bool = !bool;
+    var snare = $('.snare');
+    if (bool == true){
+    for(i=0; i < snare.length; i++){
+      $(snare).val(1);
+      $(snare).css('background-color', 'limegreen');
+    }
+  }else {
+    $(snare).val(0);
+    $(snare).css('background-color', '#D1D0CE');
+  }
+});
+}
+
+function allKick(){
+  var bool = false;
+  $('#allKick').click(function(){
+    bool = !bool;
+    var kick = $('.kick');
+    if (bool == true){
+    for(i=0; i < kick.length; i++){
+      $(kick).val(1);
+      $(kick).css('background-color', 'limegreen');
+    }
+  }else {
+    $(kick).val(0);
+    $(kick).css('background-color', '#D1D0CE');
+  }
+});
+}
+
 
 function flashYellow(drum){
   console.log("flash is working");
@@ -236,7 +327,10 @@ function flashYellow(drum){
           setTimeout(function(){
             $('#' + drum).css('background-color', 'darkorange');
             setTimeout(function(){
-              $('#' + drum).css('background-color', 'limegreen');
+              $('#' + drum).css('background-color', 'yellow');
+              setTimeout(function(){
+                $('#' + drum).css('background-color', 'limegreen');
+              }, 500);
             }, 500);
           }, 500);
         }, 500);

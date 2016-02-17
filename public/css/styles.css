@@ -2,6 +2,40 @@ body {
   font-size: 0.75em;
 }
 
+#main-container {
+  width: 74%;
+  height: 480px;
+  margin: 30px auto;
+  border-radius: 20px;
+  overflow: auto;
+  z-index: -1;
+  box-shadow: 1px 4px 37px #504A4B;
+  font-family: 'Philosopher', sans-s80if;
+  color: #2c303b;
+  text-align: center;
+  background: #4c4c4c; /* Old browsers */
+  background: -webkit-linear-gradient(#4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
+  background: -o-linear-gradient(#4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
+  background: linear-gradient(#4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+
+}
+
+#main-sequencer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h5 {
+  display: inline;
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
 #container {
   width: 1000px;
   height: 600px;
