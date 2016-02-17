@@ -19,6 +19,8 @@ app.use(cookieParser());
 var loadUser = require('./middleware/loadUser');
 app.use(loadUser);
 
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/beat-connection-01');
+
 var kickPath = path.join(__dirname, 'samples/kick.wav');
 var snarePath = path.join(__dirname, 'samples/snare.wav');
 var hihatPath = path.join(__dirname, 'samples/hihat.wav');
@@ -71,7 +73,7 @@ app.use('/api/beats', apiRouter);
 var users = require('./routes/api/users');
 app.use('/api/users', users);
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log("...listening on " + port);
 });
