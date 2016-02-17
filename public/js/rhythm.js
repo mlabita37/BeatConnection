@@ -31,7 +31,9 @@ function init() {
     stopLoop();
     isSixteenths();
     isEighths();
+    allCymbal();
     allTamb();
+    allPerc();
     allHiHat();
     allSnare();
     allKick();
@@ -322,12 +324,6 @@ function myLoop(bufferList) {
       };
     }
 
-    //  Play the hi-hat every 16th note.
-    // for (var i = 0; i < 32; ++i) {
-    //     playSound(hihat, startTime + i*0.25*quarterNoteTime);
-    // }
-
-
     // PERCUSSION
     if (sixteenths == true){
     var percArray = [
@@ -557,6 +553,24 @@ function stopLoop(){
   });
 }
 
+function allCymbal(){
+  var bool = false;
+  $('#allCymbal').click(function(){
+    console.log("Cymbal working");
+    bool = !bool;
+    var cymbal = $('.cymbal');
+    if (bool == true){
+    for(i=0; i < cymbal.length; i++){
+      $(cymbal).val(1);
+      $(cymbal).css('background-color', 'limegreen');
+    }
+  }else {
+    $(cymbal).val(0);
+    $(cymbal).css('background-color', '#D1D0CE');
+  }
+});
+}
+
 function allTamb(){
   var bool = false;
   $('#allTamb').click(function(){
@@ -570,6 +584,24 @@ function allTamb(){
   }else {
     $(tamb).val(0);
     $(tamb).css('background-color', '#D1D0CE');
+  }
+});
+}
+
+function allPerc(){
+  var bool = false;
+  $('#allPerc').click(function(){
+    console.log("All perc working");
+    bool = !bool;
+    var perc = $('.perc');
+    if (bool == true){
+    for(i=0; i < perc.length; i++){
+      $(perc).val(1);
+      $(perc).css('background-color', 'limegreen');
+    }
+  }else {
+    $(perc).val(0);
+    $(perc).css('background-color', '#D1D0CE');
   }
 });
 }
