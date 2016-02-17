@@ -1,10 +1,23 @@
-var express = require('express');
-var fs = require('fs');
-var ejs = require('ejs');
-var path = require('path');
+var express     = require('express');
+var fs          = require('fs');
+var ejs         = require('ejs');
+var path        = require('path');
+var mongoose    = require('mongoose');
+var bodyParser  = require('body-parser');
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
+
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+var loadUser = require('./middleware/loadUser');
+app.use(loadUser);
 
 var kickPath = path.join(__dirname, 'samples/kick.wav');
 var snarePath = path.join(__dirname, 'samples/snare.wav');
@@ -48,6 +61,15 @@ app.get('/music/cymbal', function(req, res){
     var readStream = fs.createReadStream(cymbalPath);
     readStream.pipe(res);
 });
+
+var indexRouter = require('./routes/index');
+app.use('/', indexRouter);
+
+var apiRouter = require('./routes/api/apiRouter');
+app.use('/api/beats', apiRouter);
+
+var users = require('./routes/api/users');
+app.use('/api/users', users);
 
 var port = 3000;
 app.listen(port, function(){

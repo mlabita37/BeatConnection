@@ -51,6 +51,13 @@ header {
   background-color: #333;
   height: 50px;
   padding-top: 14px;
+	padding-bottom: 10px;
+	overflow: auto;
+}
+
+#login, #signup{
+	float: right;
+	margin-bottom: 10px;
 }
 
 #title {
@@ -123,4 +130,31 @@ h3 {
 
 .controls, .all {
   font-family: 'Philosopher', sans-s80if;
+}
+
+/*------ Login modal -----*/
+#modal {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.modal-body {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  background-color: rgb(220,220,220);
+  padding-bottom: 100%;
+}
+
+#login-title {
+  margin-top: 30px;
+}
+
+.signupText {
+  margin-top: 40px;
 }
