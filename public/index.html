@@ -4,6 +4,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<title>Beat Connection</title>
 		<link href='https://fonts.googleapis.com/css?family=Philosopher:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -17,49 +18,54 @@
     <script src="/js/rhythm.js"></script>
   </head>
   <body>
+  <header>
+    <div id="title">Beat Connection</div>
+  </header>
   <div id="main-container">
     <div id="main-sequencer">
       <div class="row">
-        <h5>Perc-01</h5>
-        <button type="radio" class="seq" id="perc01-1" value="0"></button>
-        <button type="radio" class="seq" id="perc01-2" value="0"></button>
-        <button type="radio" class="seq" id="perc01-3" value="0"></button>
-        <button type="radio" class="seq" id="perc01-4" value="0"></button>
-        <button type="radio" class="seq" id="perc01-5" value="0"></button>
-        <button type="radio" class="seq" id="perc01-6" value="0"></button>
-        <button type="radio" class="seq" id="perc01-7" value="0"></button>
-        <button type="radio" class="seq" id="perc01-8" value="0"></button>
-        <button type="radio" class="seq" id="perc01-1" value="0"></button>
-        <button type="radio" class="seq" id="perc01-2" value="0"></button>
-        <button type="radio" class="seq" id="perc01-3" value="0"></button>
-        <button type="radio" class="seq" id="perc01-4" value="0"></button>
-        <button type="radio" class="seq" id="perc01-5" value="0"></button>
-        <button type="radio" class="seq" id="perc01-6" value="0"></button>
-        <button type="radio" class="seq" id="perc01-7" value="0"></button>
-        <button type="radio" class="seq" id="perc01-8" value="0"></button>
+        <button type="radio" id="allCymbal" class="all">All</button>
+        <h5>Cymbal</h5>
+        <button type="radio" class="seq" id="cymbal1" value="0"></button>
+        <button type="radio" class="seq" id="cymbal2" value="0"></button>
+        <button type="radio" class="seq" id="cymbal3" value="0"></button>
+        <button type="radio" class="seq" id="cymbal4" value="0"></button>
+        <button type="radio" class="seq" id="cymbal5" value="0"></button>
+        <button type="radio" class="seq" id="cymbal6" value="0"></button>
+        <button type="radio" class="seq" id="cymbal7" value="0"></button>
+        <button type="radio" class="seq" id="cymbal8" value="0"></button>
+        <button type="radio" class="seq" id="cymbal9" value="0"></button>
+        <button type="radio" class="seq" id="cymbal10" value="0"></button>
+        <button type="radio" class="seq" id="cymbal11" value="0"></button>
+        <button type="radio" class="seq" id="cymbal12" value="0"></button>
+        <button type="radio" class="seq" id="cymbal13" value="0"></button>
+        <button type="radio" class="seq" id="cymbal14" value="0"></button>
+        <button type="radio" class="seq" id="cymbal15" value="0"></button>
+        <button type="radio" class="seq" id="cymbal16" value="0"></button>
       </div>
       <div class="row">
-        <h5>Perc-01</h5>
-        <button type="radio" class="seq" id="perc01-1" value="0"></button>
-        <button type="radio" class="seq" id="perc01-2" value="0"></button>
-        <button type="radio" class="seq" id="perc01-3" value="0"></button>
-        <button type="radio" class="seq" id="perc01-4" value="0"></button>
-        <button type="radio" class="seq" id="perc01-5" value="0"></button>
-        <button type="radio" class="seq" id="perc01-6" value="0"></button>
-        <button type="radio" class="seq" id="perc01-7" value="0"></button>
-        <button type="radio" class="seq" id="perc01-8" value="0"></button>
-        <button type="radio" class="seq" id="perc01-1" value="0"></button>
-        <button type="radio" class="seq" id="perc01-2" value="0"></button>
-        <button type="radio" class="seq" id="perc01-3" value="0"></button>
-        <button type="radio" class="seq" id="perc01-4" value="0"></button>
-        <button type="radio" class="seq" id="perc01-5" value="0"></button>
-        <button type="radio" class="seq" id="perc01-6" value="0"></button>
-        <button type="radio" class="seq" id="perc01-7" value="0"></button>
-        <button type="radio" class="seq" id="perc01-8" value="0"></button>
+        <button type="radio" id="allTamb" class="all">All</button>
+        <h5>&nbsp;&nbsp;Tamb</h5>
+        <button type="radio" class="seq tamb" id="tamb1" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb2" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb3" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb4" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb5" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb6" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb7" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb8" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb9" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb10" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb11" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb12" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb13" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb14" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb15" value="0"></button>
+        <button type="radio" class="seq tamb" id="tamb16" value="0"></button>
       </div>
       <div class="row">
         <button type="radio" id="allPerc" class="all">All</button>
-        <h5>Perc-01</h5>
+        <h5>&nbsp;&nbsp;Perc</h5>
         <button type="radio" class="seq" id="perc1" value="0"></button>
         <button type="radio" class="seq" id="perc2" value="0"></button>
         <button type="radio" class="seq" id="perc3" value="0"></button>
@@ -99,7 +105,7 @@
       </div>
       <div class="row">
         <button type="radio" id="allSnare" class="all">All</button>
-        <h5>Snare</h5>
+        <h5>&nbsp;Snare</h5>
         <button type="radio" class="seq snare" id="snare1" value="0"></button>
         <button type="radio" class="seq snare" id="snare2" value="0"></button>
         <button type="radio" class="seq snare" id="snare3" value="0"></button>
@@ -119,7 +125,7 @@
       </div>
       <div class="row">
           <button type="radio" id="allKick" class="all">All</button>
-          <h5>Kick</h5>
+          <h5>&nbsp;&nbsp;Kick</h5>
           <button type="radio" class="seq kick" id="kick1" value="0"></button>
           <button type="radio" class="seq kick" id="kick2" value="0"></button>
           <button type="radio" class="seq kick" id="kick3" value="0"></button>
@@ -140,10 +146,11 @@
       <div class="row">
 
         <h3>BPM: <input id="tempo" type="text" value="120" min="0" max="280"></h3>
-        <input type="button" class="fancy" value="Clear All" id="clearAll"/>
-        <input type="button" class="fancy" value="Sixteenths" id="sixteenths"/>
-        <input type="button" class="fancy" value="Start Loop" id="playLoop"/>
-        <input type="button" class="fancy" value="Stop Loop" id="stopLoop"/>
+        <input type="button" class="controls" value="Clear All" id="clearAll"/>
+        <input type="button" class="controls" value="Sixteenths" id="sixteenths"/>
+        <input type="button" class="controls" value="Eighths" id="eighths"/>
+        <input type="button" class="controls" value="Start Loop" id="playLoop"/>
+        <input type="button" class="controls" value="Stop Loop" id="stopLoop"/>
       </div>
       </div>
   </div>

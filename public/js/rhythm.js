@@ -18,7 +18,9 @@ function init() {
         "/music/kick",
         "/music/snare",
         "/music/hihat",
-        "/music/perc01"
+        "/music/perc01",
+        "/music/tamb",
+        "/music/cymbal"
         ],
         bufferLoadCompleted
     );
@@ -28,6 +30,8 @@ function init() {
     playLoop();
     stopLoop();
     isSixteenths();
+    isEighths();
+    allTamb();
     allHiHat();
     allSnare();
     allKick();
@@ -53,6 +57,8 @@ function myLoop(bufferList) {
     var snare = bufferList[1];
     var hihat = bufferList[2];
     var perc01 = bufferList[3];
+    var tamb = bufferList[4];
+    var cymbal = bufferList[5];
 
     var kick1 = $('#kick1').val(),
         kick2 = $('#kick2').val(),
@@ -110,14 +116,46 @@ function myLoop(bufferList) {
         perc6 = $('#perc6').val(),
         perc7 = $('#perc7').val(),
         perc8 = $('#perc8').val();
-        perc9 = $('#perc1').val(),
-        perc10 = $('#perc2').val(),
-        perc11 = $('#perc3').val(),
-        perc12 = $('#perc4').val(),
-        perc13 = $('#perc5').val(),
-        perc14 = $('#perc6').val(),
-        perc15 = $('#perc7').val(),
-        perc16 = $('#perc8').val();
+        perc9 = $('#perc9').val(),
+        perc10 = $('#perc10').val(),
+        perc11 = $('#perc11').val(),
+        perc12 = $('#perc12').val(),
+        perc13 = $('#perc13').val(),
+        perc14 = $('#perc14').val(),
+        perc15 = $('#perc15').val(),
+        perc16 = $('#perc16').val(),
+        tamb1 = $('#tamb1').val(),
+        tamb2 = $('#tamb2').val(),
+        tamb3 = $('#tamb3').val(),
+        tamb4 = $('#tamb4').val(),
+        tamb5 = $('#tamb5').val(),
+        tamb6 = $('#tamb6').val(),
+        tamb7 = $('#tamb7').val(),
+        tamb8 = $('#tamb8').val(),
+        tamb9 = $('#tamb9').val(),
+        tamb10 = $('#tamb10').val(),
+        tamb11 = $('#tamb11').val(),
+        tamb12 = $('#tamb12').val(),
+        tamb13 = $('#tamb13').val(),
+        tamb14 = $('#tamb14').val(),
+        tamb15 = $('#tamb15').val(),
+        tamb16 = $('#tamb16').val(),
+        cymbal1 = $('#cymbal1').val(),
+        cymbal2 = $('#cymbal2').val(),
+        cymbal3 = $('#cymbal3').val(),
+        cymbal4 = $('#cymbal4').val(),
+        cymbal5 = $('#cymbal5').val(),
+        cymbal6 = $('#cymbal6').val(),
+        cymbal7 = $('#cymbal7').val(),
+        cymbal8 = $('#cymbal8').val(),
+        cymbal9 = $('#cymbal9').val(),
+        cymbal10 = $('#cymbal10').val(),
+        cymbal11 = $('#cymbal11').val(),
+        cymbal12 = $('#cymbal12').val(),
+        cymbal13 = $('#cymbal13').val(),
+        cymbal14 = $('#cymbal14').val(),
+        cymbal15 = $('#cymbal15').val(),
+        cymbal16 = $('#cymbal16').val();
 
 
 
@@ -150,6 +188,21 @@ function myLoop(bufferList) {
         flashYellow('kick'+(i+1));
       }
     };
+    }else if(eighths == true){
+      var kickArray = [
+        kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+        kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16,
+        kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
+        kick9, kick10, kick11, kick12, kick13, kick14, kick15, kick16
+      ];
+      for (var i=0; i < kickArray.length; i++){
+        if (kickArray[i] == 1 && kickArray[i].id == "kick1"){
+          playSound(kick, startTime);
+        }else if (kickArray[i] == 1){
+          playSound(kick, startTime + i*0.5*quarterNoteTime);
+          flashYellow('kick'+(i+1));
+        }
+      };
     }else{
       var kickArray = [
         kick1, kick2, kick3, kick4, kick5, kick6, kick7, kick8,
@@ -186,6 +239,21 @@ function myLoop(bufferList) {
             flashYellow('snare'+(i+1));
           }
         };
+        }else if(eighths == true){
+          var snareArray = [
+            snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+            snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16,
+            snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
+            snare9, snare10, snare11, snare12, snare13, snare14, snare15, snare16
+          ];
+          for (var i=0; i < snareArray.length; i++){
+            if (snareArray[i] == 1 && snareArray[i].id == "snare1"){
+              playSound(snare, startTime);
+            }else if (snareArray[i] == 1){
+              playSound(snare, startTime + i*0.5*quarterNoteTime);
+              flashYellow('snare'+(i+1));
+            }
+          };
         }else{
           var snareArray = [
             snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
@@ -224,7 +292,22 @@ function myLoop(bufferList) {
         flashYellow('hihat'+(i+1));
       }
     };
-    }else{
+  }else if(eighths == true){
+    var hiHatArray = [
+      hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+      hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16,
+      hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
+      hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16
+    ];
+    for (var i=0; i < hiHatArray.length; i++){
+      if (hiHatArray[i] == 1 && hiHatArray[i].id == "hihat1"){
+        playSound(hihat, startTime);
+      }else if (hiHatArray[i] == 1){
+        playSound(hihat, startTime + i*0.5*quarterNoteTime);
+        flashYellow('hihat'+(i+1));
+      }
+    };
+  }else{
       var hiHatArray = [
         hihat1, hihat2, hihat3, hihat4, hihat5, hihat6, hihat7, hihat8,
         hihat9, hihat10, hihat11, hihat12, hihat13, hihat14, hihat15, hihat16
@@ -245,17 +328,160 @@ function myLoop(bufferList) {
     // }
 
 
-    // Perc01
-    var percArray = [perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8, perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16];
+    // PERCUSSION
+    if (sixteenths == true){
+    var percArray = [
+    perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+    perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16,
+    perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+    perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16,
+    perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+    perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16,
+    perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+    perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16
+    ];
 
-    for (var i=0; i < percArray.length; i++){
-      if (percArray[i] == 1 && percArray[i].id == "perc1"){
-        playSound(hihat, startTime);
-      }else if (percArray[i] == 1){
-        playSound(perc01, startTime + i*quarterNoteTime);
-        flashYellow('perc1-'+(i+1));
-      }
-    }
+        for (var i=0; i < percArray.length * 2; i++){
+          if (percArray[i] == 1 && percArray[i].id == "perc1"){
+            playSound(perc01, startTime);
+          }else if (percArray[i] == 1){
+            playSound(perc01, startTime + i*0.25*quarterNoteTime);
+            flashYellow('perc'+(i+1));
+          }
+        };
+        }else if(eighths == true){
+          var percArray = [
+            perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+            perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16,
+            perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+            perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16
+          ];
+          for (var i=0; i < percArray.length; i++){
+            if (percArray[i] == 1 && percArray[i].id == "perc1"){
+              playSound(perc01, startTime);
+            }else if (percArray[i] == 1){
+              playSound(perc01, startTime + i*0.5*quarterNoteTime);
+              flashYellow('perc'+(i+1));
+            }
+          };
+        }else{
+          var percArray = [
+            perc1, perc2, perc3, perc4, perc5, perc6, perc7, perc8,
+            perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16
+          ];
+          for (var i=0; i < percArray.length; i++){
+            if (percArray[i] == 1 && percArray[i].id == "perc1"){
+              playSound(perc01, startTime);
+            }else if (percArray[i] == 1){
+              playSound(perc01, startTime + i*quarterNoteTime);
+              flashYellow('perc'+(i+1));
+            }
+          };
+        }
+
+
+    // TAMB
+    if (sixteenths == true){
+    var tambArray = [
+    tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+    tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16,
+    tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+    tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16,
+    tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+    tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16,
+    tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+    tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16
+    ];
+
+        for (var i=0; i < tambArray.length * 2; i++){
+          if (tambArray[i] == 1 && tambArray[i].id == "tamb1"){
+            playSound(tamb, startTime);
+          }else if (tambArray[i] == 1){
+            playSound(tamb, startTime + i*0.25*quarterNoteTime);
+            flashYellow('tamb'+(i+1));
+          }
+        };
+        }else if(eighths == true){
+          var tambArray = [
+            tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+            tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16,
+            tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+            tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16
+          ];
+          for (var i=0; i < tambArray.length; i++){
+            if (tambArray[i] == 1 && tambArray[i].id == "tamb1"){
+              playSound(tamb, startTime);
+            }else if (tambArray[i] == 1){
+              playSound(tamb, startTime + i*0.5*quarterNoteTime);
+              flashYellow('tamb'+(i+1));
+            }
+          };
+        }else{
+          var tambArray = [
+            tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
+            tamb9, tamb10, tamb11, tamb12, tamb13, tamb14, tamb15, tamb16
+          ];
+          for (var i=0; i < tambArray.length; i++){
+            if (tambArray[i] == 1 && tambArray[i].id == "tamb1"){
+              playSound(tamb, startTime);
+            }else if (tambArray[i] == 1){
+              playSound(tamb, startTime + i*quarterNoteTime);
+              flashYellow('tamb'+(i+1));
+            }
+          };
+        }
+
+
+    // CYMBAL
+    if (sixteenths == true){
+    var cymbalArray = [
+    cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+    cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16,
+    cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+    cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16,
+    cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+    cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16,
+    cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+    cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16
+    ];
+
+        for (var i=0; i < cymbalArray.length * 2; i++){
+          if (cymbalArray[i] == 1 && cymbalArray[i].id == "cymbal1"){
+            playSound(cymbal, startTime);
+          }else if (cymbalArray[i] == 1){
+            playSound(cymbal, startTime + i*0.25*quarterNoteTime);
+            flashYellow('cymbal'+(i+1));
+          }
+        };
+        }else if(eighths == true){
+          var cymbalArray = [
+            cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+            cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16,
+            cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+            cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16
+          ];
+          for (var i=0; i < cymbalArray.length; i++){
+            if (cymbalArray[i] == 1 && cymbalArray[i].id == "cymbal1"){
+              playSound(cymbal, startTime);
+            }else if (cymbalArray[i] == 1){
+              playSound(cymbal, startTime + i*0.5*quarterNoteTime);
+              flashYellow('cymbal'+(i+1));
+            }
+          };
+        }else{
+          var cymbalArray = [
+            cymbal1, cymbal2, cymbal3, cymbal4, cymbal5, cymbal6, cymbal7, cymbal8,
+            cymbal9, cymbal10, cymbal11, cymbal12, cymbal13, cymbal14, cymbal15, cymbal16
+          ];
+          for (var i=0; i < cymbalArray.length; i++){
+            if (cymbalArray[i] == 1 && cymbalArray[i].id == "cymbal1"){
+              playSound(cymbal, startTime);
+            }else if (cymbalArray[i] == 1){
+              playSound(cymbal, startTime + i*quarterNoteTime);
+              flashYellow('cymbal'+(i+1));
+            }
+          };
+        }
 
 }
 
@@ -292,6 +518,17 @@ function isSixteenths(){
   });
 }
 
+var eighths = false;
+function isEighths(){
+  $('#eighths').click(function(){
+    eighths = !eighths;
+    console.log('eighths working');
+    if (eighths == true){
+      $('#eighths').css('background-color', 'cyan');
+    }else $('#eighths').css('background-color', 'white');
+  });
+}
+
 var interval;
 function playLoop(){
   $('#playLoop').click(function(){
@@ -318,6 +555,23 @@ function stopLoop(){
     console.log('Stop button working');
     clearInterval(interval);
   });
+}
+
+function allTamb(){
+  var bool = false;
+  $('#allTamb').click(function(){
+    bool = !bool;
+    var tamb = $('.tamb');
+    if (bool == true){
+    for(i=0; i < tamb.length; i++){
+      $(tamb).val(1);
+      $(tamb).css('background-color', 'limegreen');
+    }
+  }else {
+    $(tamb).val(0);
+    $(tamb).css('background-color', '#D1D0CE');
+  }
+});
 }
 
 function allHiHat(){
