@@ -2,6 +2,7 @@ window.onload = init;
 
 var context;
 var bufferLoader;
+var play = 0;
 
 function init() {
     try {
@@ -31,6 +32,7 @@ function init() {
     stopLoop();
     isSixteenths();
     isEighths();
+    isQuarters();
     allCymbal();
     allTamb();
     allPerc();
@@ -49,8 +51,7 @@ function playSound(buffer, time) {
 
 function stopSound() {
   var source = context.createBufferSource();
-  source.connect(context.destination);
-  source.disconnect(context.destination);
+  source.stop(context.currentTime);
 }
 
 // Plays Loop 1
@@ -160,8 +161,8 @@ function myLoop(bufferList) {
         cymbal16 = $('#cymbal16').val();
 
 
-
-
+console.log(play);
+if (play == true){
     // Start playing the rhythm 100 milliseconds from "now"
     var startTime = context.currentTime;
 
@@ -376,7 +377,7 @@ function myLoop(bufferList) {
         }
 
 
-    // TAMB
+    // TAMBORINE
     if (sixteenths == true){
     var tambArray = [
     tamb1, tamb2, tamb3, tamb4, tamb5, tamb6, tamb7, tamb8,
@@ -478,7 +479,9 @@ function myLoop(bufferList) {
             }
           };
         }
-
+      }else {
+        console.log("Already playing!");
+      }
 }
 
 function bufferLoadCompleted() {
@@ -504,37 +507,75 @@ function getValue(){
   });
 };
 
+// isSixteenths
 var sixteenths = false;
 function isSixteenths(){
   $('#sixteenths').click(function(){
+    if (eighths === true || quarters === true){
+      eighths = false;
+      $('#eighths').css('background-color', 'deepskyblue');
+      $('#quarters').css('background-color', 'deepskyblue');
+    }
     sixteenths = !sixteenths;
     if (sixteenths == true){
-      $('#sixteenths').css('background-color', 'cyan');
-    }else $('#sixteenths').css('background-color', 'white');
+      $('#sixteenths').css('background-color', 'lime');
+    }else {
+      $('#sixteenths').css('background-color', 'deepskyblue');
+    }
   });
 }
 
+// isEighths
 var eighths = false;
 function isEighths(){
   $('#eighths').click(function(){
+    if (sixteenths === true || quarters === true){
+      sixteenths = false;
+      quarters = false;
+      $('#sixteenths').css('background-color', 'deepskyblue');
+      $('#quarters').css('background-color', 'deepskyblue');
+    }
     eighths = !eighths;
     console.log('eighths working');
     if (eighths == true){
-      $('#eighths').css('background-color', 'cyan');
-    }else $('#eighths').css('background-color', 'white');
+      $('#eighths').css('background-color', 'lime');
+    }else $('#eighths').css('background-color', 'deepskyblue');
   });
 }
 
+var quarters = true;
+function isQuarters(){
+  $('#quarters').click(function(){
+    if (sixteenths === true || eighths === true){
+      sixteenths = false;
+      eighths = false;
+      $('#sixteenths').css('background-color', 'deepskyblue');
+      $('#eighths').css('background-color', 'deepskyblue');
+    }
+    quarters = true;
+    if (quarters == true){
+      $('#quarters').css('background-color', 'lime');
+    }else $('#quarters').css('background-color', 'deepskyblue');
+  });
+}
+
+// Play Loop
 var interval;
 function playLoop(){
   $('#playLoop').click(function(){
-    var time = getTime();
-    console.log(time);
-    myLoop(bufferLoader.bufferList);
-    interval = setInterval(function(){
-    myLoop(bufferLoader.bufferList);
-  }, time);
-  });
+      if (play === 0){
+      play += 1;
+      var time = getTime();
+      console.log(time);
+      myLoop(bufferLoader.bufferList);
+      interval = setInterval(function(){
+      myLoop(bufferLoader.bufferList);
+    }, time);
+  }else if (play === 1){
+        console.log("Already playing!");
+    }
+
+});
 };
 
 function getTime(){
@@ -548,8 +589,10 @@ function getTime(){
 
 function stopLoop(){
   $('#stopLoop').click(function(){
+    play = 0;
     console.log('Stop button working');
     clearInterval(interval);
+    // stopSound();
   });
 }
 
@@ -659,12 +702,24 @@ function allKick(){
 
 function clearAll(){
   $('#clearAll').click(function(){
+    $(this).css('background-color', 'lime');
+    setTimeout(function(){
+      console.log("timeout working");
+      $('#clearAll').css('background-color', 'deepskyblue');
+    }, 250);
     var all = $('.seq');
       for (i=0; i<all.length; i++){
         $(all).val(0);
         $(all).css('background-color', '#D1D0CE');
       }
   });
+}
+function flash(drum){
+  var colorArr
+  for (var i=0; i < 16; i++){
+    $('#' + drum).css('background-color', '#4D4DFF');
+  }
+  $('#' + drum)
 }
 
 
