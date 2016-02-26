@@ -141,6 +141,14 @@ h3 {
 #quarters {
 	background-color: lime;
 }
+
+#playLoop {
+	padding: 4px 6px;
+}
+#stopLoop {
+	font-size: 1em;
+	line-height: 1em;
+}
 /*------ Login modal -----*/
 #login-modal {
   top: 0;
