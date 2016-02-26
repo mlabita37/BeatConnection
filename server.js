@@ -27,6 +27,13 @@ var hihatPath = path.join(__dirname, 'samples/hihat.wav');
 var perc01Path = path.join(__dirname, 'samples/perc-1.wav');
 var tambPath = path.join(__dirname, 'samples/tamb.wav');
 var cymbalPath = path.join(__dirname, 'samples/cymbal.wav');
+var cMajPath = path.join(__dirname, 'samples/c-maj.wav');
+var dMajPath = path.join(__dirname, 'samples/d-maj.wav');
+var eMajPath = path.join(__dirname, 'samples/e-maj.wav');
+var fMajPath = path.join(__dirname, 'samples/f-maj.wav');
+var gMajPath = path.join(__dirname, 'samples/g-maj.wav');
+var aMajPath = path.join(__dirname, 'samples/a-maj.wav');
+var bMajPath = path.join(__dirname, 'samples/b-maj.wav');
 
 app.get('/music/kick', function(req, res){
     res.set({'Content-Type': 'audio/mpeg'});
@@ -61,6 +68,18 @@ app.get('/music/tamb', function(req, res){
 app.get('/music/cymbal', function(req, res){
     res.set({'Content-Type': 'audio/mpeg'});
     var readStream = fs.createReadStream(cymbalPath);
+    readStream.pipe(res);
+});
+
+app.get('/music/c-maj', function(req, res){
+    res.set({'Content-Type': 'audio/mpeg'});
+    var readStream = fs.createReadStream(cMajPath);
+    readStream.pipe(res);
+});
+
+app.get('/music/b-maj', function(req, res){
+    res.set({'Content-Type': 'audio/mpeg'});
+    var readStream = fs.createReadStream(bMajPath);
     readStream.pipe(res);
 });
 
