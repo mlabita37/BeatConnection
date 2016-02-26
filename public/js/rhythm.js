@@ -714,6 +714,7 @@ function clearAll(){
       }
   });
 }
+
 function flash(drum){
   var colorArr
   for (var i=0; i < 16; i++){
