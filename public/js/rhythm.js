@@ -1,3 +1,5 @@
+console.log("...rhythm.js loaded");
+
 window.onload = init;
 
 var context;
