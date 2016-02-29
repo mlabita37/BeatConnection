@@ -484,30 +484,11 @@ if (play == true){
       }else {
         console.log("Already playing!");
       }
-}
+}// End myLoop
 
 function bufferLoadCompleted() {
 
 }
-
-function getTempo(){
-  var tempo = $('#tempo').val();
-  return tempo;
-}
-
-function getValue(){
-  $('.seq').click(function(){
-    var value = $(this).val();
-    if (value == 0){
-    $(this).css('background-color', "limegreen");
-    $(this).val(1);
-  }else{
-    $(this).css('background-color', "#D1D0CE");
-    $(this).val(0);
-  }
-  console.log($(this).val());
-  });
-};
 
 // isSixteenths
 var sixteenths = false;
@@ -558,43 +539,6 @@ function isQuarters(){
     if (quarters == true){
       $('#quarters').css('background-color', 'lime');
     }else $('#quarters').css('background-color', 'deepskyblue');
-  });
-}
-
-// Play Loop
-var interval;
-function playLoop(){
-  $('#playLoop').click(function(){
-      if (play === 0){
-      play += 1;
-      var time = getTime();
-      console.log(time);
-      myLoop(bufferLoader.bufferList);
-      interval = setInterval(function(){
-      myLoop(bufferLoader.bufferList);
-    }, time);
-  }else if (play === 1){
-        console.log("Already playing!");
-    }
-
-});
-};
-
-function getTime(){
-  var tempo = getTempo();
-  var bar = 8/tempo;
-  var time = bar * 60;
-  time = time * 2000;
-  console.log(time);
-  return time;
-}
-
-function stopLoop(){
-  $('#stopLoop').click(function(){
-    play = 0;
-    console.log('Stop button working');
-    clearInterval(interval);
-    // stopSound();
   });
 }
 
