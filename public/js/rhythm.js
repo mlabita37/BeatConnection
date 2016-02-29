@@ -190,7 +190,7 @@ if (play == true){
         playSound(kick, startTime);
       }else if (kickArray[i] == 1){
         playSound(kick, startTime + i*0.25*quarterNoteTime);
-        flashYellow('kick'+(i+1));
+        flashLights('kick'+(i+1));
       }
     };
     }else if(eighths == true){
@@ -205,7 +205,7 @@ if (play == true){
           playSound(kick, startTime);
         }else if (kickArray[i] == 1){
           playSound(kick, startTime + i*0.5*quarterNoteTime);
-          flashYellow('kick'+(i+1));
+          flashLights('kick'+(i+1));
         }
       };
     }else{
@@ -218,7 +218,7 @@ if (play == true){
           playSound(kick, startTime);
         }else if (kickArray[i] == 1){
           playSound(kick, startTime + i*quarterNoteTime);
-          flashYellow('kick'+(i+1));
+          flashLights('kick'+(i+1));
         }
       };
     }
@@ -241,7 +241,7 @@ if (play == true){
             playSound(snare, startTime);
           }else if (snareArray[i] == 1){
             playSound(snare, startTime + i*0.25*quarterNoteTime);
-            flashYellow('snare'+(i+1));
+            flashLights('snare'+(i+1));
           }
         };
         }else if(eighths == true){
@@ -256,7 +256,7 @@ if (play == true){
               playSound(snare, startTime);
             }else if (snareArray[i] == 1){
               playSound(snare, startTime + i*0.5*quarterNoteTime);
-              flashYellow('snare'+(i+1));
+              flashLights('snare'+(i+1));
             }
           };
         }else{
@@ -269,7 +269,7 @@ if (play == true){
               playSound(snare, startTime);
             }else if (snareArray[i] == 1){
               playSound(snare, startTime + i*quarterNoteTime);
-              flashYellow('snare'+(i+1));
+              flashLights('snare'+(i+1));
             }
           };
         }
@@ -294,7 +294,7 @@ if (play == true){
         playSound(hihat, startTime);
       }else if (hiHatArray[i] == 1){
         playSound(hihat, startTime + i*0.25*quarterNoteTime);
-        flashYellow('hihat'+(i+1));
+        flashLights('hihat'+(i+1));
       }
     };
   }else if(eighths == true){
@@ -309,7 +309,7 @@ if (play == true){
         playSound(hihat, startTime);
       }else if (hiHatArray[i] == 1){
         playSound(hihat, startTime + i*0.5*quarterNoteTime);
-        flashYellow('hihat'+(i+1));
+        flashLights('hihat'+(i+1));
       }
     };
   }else{
@@ -322,7 +322,7 @@ if (play == true){
           playSound(hihat, startTime);
         }else if (hiHatArray[i] == 1){
           playSound(hihat, startTime + i*quarterNoteTime);
-          flashYellow('hihat'+(i+1));
+          flashLights('hihat'+(i+1));
         }
       };
     }
@@ -345,7 +345,7 @@ if (play == true){
             playSound(perc01, startTime);
           }else if (percArray[i] == 1){
             playSound(perc01, startTime + i*0.25*quarterNoteTime);
-            flashYellow('perc'+(i+1));
+            flashLights('perc'+(i+1));
           }
         };
         }else if(eighths == true){
@@ -360,7 +360,7 @@ if (play == true){
               playSound(perc01, startTime);
             }else if (percArray[i] == 1){
               playSound(perc01, startTime + i*0.5*quarterNoteTime);
-              flashYellow('perc'+(i+1));
+              flashLights('perc'+(i+1));
             }
           };
         }else{
@@ -373,7 +373,7 @@ if (play == true){
               playSound(perc01, startTime);
             }else if (percArray[i] == 1){
               playSound(perc01, startTime + i*quarterNoteTime);
-              flashYellow('perc'+(i+1));
+              flashLights('perc'+(i+1));
             }
           };
         }
@@ -397,7 +397,7 @@ if (play == true){
             playSound(tamb, startTime);
           }else if (tambArray[i] == 1){
             playSound(tamb, startTime + i*0.25*quarterNoteTime);
-            flashYellow('tamb'+(i+1));
+            flashLights('tamb'+(i+1));
           }
         };
         }else if(eighths == true){
@@ -412,7 +412,7 @@ if (play == true){
               playSound(tamb, startTime);
             }else if (tambArray[i] == 1){
               playSound(tamb, startTime + i*0.5*quarterNoteTime);
-              flashYellow('tamb'+(i+1));
+              flashLights('tamb'+(i+1));
             }
           };
         }else{
@@ -425,7 +425,7 @@ if (play == true){
               playSound(tamb, startTime);
             }else if (tambArray[i] == 1){
               playSound(tamb, startTime + i*quarterNoteTime);
-              flashYellow('tamb'+(i+1));
+              flashLights('tamb'+(i+1));
             }
           };
         }
@@ -449,7 +449,7 @@ if (play == true){
             playSound(cymbal, startTime);
           }else if (cymbalArray[i] == 1){
             playSound(cymbal, startTime + i*0.25*quarterNoteTime);
-            flashYellow('cymbal'+(i+1));
+            flashLights('cymbal'+(i+1));
           }
         };
         }else if(eighths == true){
@@ -464,7 +464,7 @@ if (play == true){
               playSound(cymbal, startTime);
             }else if (cymbalArray[i] == 1){
               playSound(cymbal, startTime + i*0.5*quarterNoteTime);
-              flashYellow('cymbal'+(i+1));
+              flashLights('cymbal'+(i+1));
             }
           };
         }else{
@@ -477,7 +477,7 @@ if (play == true){
               playSound(cymbal, startTime);
             }else if (cymbalArray[i] == 1){
               playSound(cymbal, startTime + i*quarterNoteTime);
-              flashYellow('cymbal'+(i+1));
+              flashLights('cymbal'+(i+1));
             }
           };
         }
@@ -598,135 +598,7 @@ function stopLoop(){
   });
 }
 
-function allCymbal(){
-  var bool = false;
-  $('#allCymbal').click(function(){
-    console.log("Cymbal working");
-    bool = !bool;
-    var cymbal = $('.cymbal');
-    if (bool == true){
-    for(i=0; i < cymbal.length; i++){
-      $(cymbal).val(1);
-      $(cymbal).css('background-color', 'limegreen');
-    }
-  }else {
-    $(cymbal).val(0);
-    $(cymbal).css('background-color', '#D1D0CE');
-  }
-});
-}
-
-function allTamb(){
-  var bool = false;
-  $('#allTamb').click(function(){
-    bool = !bool;
-    var tamb = $('.tamb');
-    if (bool == true){
-    for(i=0; i < tamb.length; i++){
-      $(tamb).val(1);
-      $(tamb).css('background-color', 'limegreen');
-    }
-  }else {
-    $(tamb).val(0);
-    $(tamb).css('background-color', '#D1D0CE');
-  }
-});
-}
-
-function allPerc(){
-  var bool = false;
-  $('#allPerc').click(function(){
-    console.log("All perc working");
-    bool = !bool;
-    var perc = $('.perc');
-    if (bool == true){
-    for(i=0; i < perc.length; i++){
-      $(perc).val(1);
-      $(perc).css('background-color', 'limegreen');
-    }
-  }else {
-    $(perc).val(0);
-    $(perc).css('background-color', '#D1D0CE');
-  }
-});
-}
-
-function allHiHat(){
-  var bool = false;
-  $('#allHiHat').click(function(){
-    bool = !bool;
-    var hihat = $('.hihat');
-    if (bool == true){
-    for(i=0; i < hihat.length; i++){
-      $(hihat).val(1);
-      $(hihat).css('background-color', 'limegreen');
-    }
-  }else {
-    $(hihat).val(0);
-    $(hihat).css('background-color', '#D1D0CE');
-  }
-});
-}
-
-function allSnare(){
-  var bool = false;
-  $('#allSnare').click(function(){
-    bool = !bool;
-    var snare = $('.snare');
-    if (bool == true){
-    for(i=0; i < snare.length; i++){
-      $(snare).val(1);
-      $(snare).css('background-color', 'limegreen');
-    }
-  }else {
-    $(snare).val(0);
-    $(snare).css('background-color', '#D1D0CE');
-  }
-});
-}
-
-function allKick(){
-  var bool = false;
-  $('#allKick').click(function(){
-    bool = !bool;
-    var kick = $('.kick');
-    if (bool == true){
-    for(i=0; i < kick.length; i++){
-      $(kick).val(1);
-      $(kick).css('background-color', 'limegreen');
-    }
-  }else {
-    $(kick).val(0);
-    $(kick).css('background-color', '#D1D0CE');
-  }
-});
-}
-
-function clearAll(){
-  $('#clearAll').click(function(){
-    $(this).css('background-color', 'lime');
-    setTimeout(function(){
-      console.log("timeout working");
-      $('#clearAll').css('background-color', 'deepskyblue');
-    }, 250);
-    var all = $('.seq');
-      for (i=0; i<all.length; i++){
-        $(all).val(0);
-        $(all).css('background-color', '#D1D0CE');
-      }
-  });
-}
-
-function flash(drum){
-  var colorArr
-  for (var i=0; i < 16; i++){
-    $('#' + drum).css('background-color', '#4D4DFF');
-  }
-  $('#' + drum)
-}
-
-
-function flashYellow(drum){
+function flashLights(drum){
   console.log("flash is working");
   $('#' + drum).css('background-color', '#4D4DFF');
   setTimeout(function(){
