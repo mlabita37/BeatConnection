@@ -2,10 +2,6 @@ console.log('...snare.js loaded');
 
 function playSnare(snare, startTime, quarterNoteTime){
 
-  snare = snare;
-  startTime = startTime;
-  quarterNoteTime = quarterNoteTime;
-
   var snare1 = $('#snare1').val(),
       snare2 = $('#snare2').val(),
       snare3 = $('#snare3').val(),
@@ -24,7 +20,6 @@ function playSnare(snare, startTime, quarterNoteTime){
       snare16 = $('#snare16').val();
 
 
-    // SNARE
     if (sixteenths == true){
     var snareArray = [
     snare1, snare2, snare3, snare4, snare5, snare6, snare7, snare8,
@@ -74,4 +69,5 @@ function playSnare(snare, startTime, quarterNoteTime){
             }
           };
         }
+
 }

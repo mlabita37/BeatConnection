@@ -4,7 +4,6 @@ window.onload = init;
 
 var context;
 var bufferLoader;
-var play = 0;
 
 function init() {
     try {
@@ -14,7 +13,7 @@ function init() {
         alert("Web Audio API is not supported in this browser");
     }
 
-    // Start loading the drum kit.
+    // Load the drum kit
     bufferLoader = new BufferLoader(
         context,
         [
@@ -67,9 +66,7 @@ function myLoop(bufferList) {
 
 if (play == true){
     var startTime = context.currentTime;
-
     var tempo = getTempo();
-    console.log(tempo);
     var quarterNoteTime = 60 / tempo;
 
     playKick(kick, startTime, quarterNoteTime);

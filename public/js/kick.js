@@ -1,9 +1,5 @@
 function playKick(kick, startTime, quarterNoteTime){
 
-  kick = kick;
-  startTime = startTime;
-  quarterNoteTime = quarterNoteTime;
-
   var kick1 = $('#kick1').val(),
       kick2 = $('#kick2').val(),
       kick3 = $('#kick3').val(),

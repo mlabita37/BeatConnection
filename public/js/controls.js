@@ -21,14 +21,15 @@ function getValue(){
   });
 };
 
+
 // Play Loop
+var play = 0;
 var interval;
 function playLoop(){
   $('#playLoop').click(function(){
       if (play === 0){
       play += 1;
       var time = getTime();
-      console.log(time);
       myLoop(bufferLoader.bufferList);
       interval = setInterval(function(){
       myLoop(bufferLoader.bufferList);
@@ -46,7 +47,6 @@ function getTime(){
   var bar = 8/tempo;
   var time = bar * 60;
   time = time * 2000;
-  console.log(time);
   return time;
 }
 

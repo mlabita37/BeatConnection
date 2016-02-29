@@ -1,4 +1,4 @@
-console.log('...pattern.js loaded');
+console.log('...select-all.js loaded');
 
 // Highlight all 16 cymbal notes
 function allCymbal(){
