@@ -1,3 +1,5 @@
+console.log("...cymbal.js loaded");
+
 function playCymbal(cymbal, startTime, quarterNoteTime){
 
 cymbal1 = $('#cymbal1').val(),
