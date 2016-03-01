@@ -14,4 +14,4 @@ express: 4.13.4,
 mongoose: 4.4.4
 
 ###About   
-This app uses the Web Audio API to schedule real-time events with jQuery. Just enter a sequence, choose a tempo, and select a meter and you'll be making gorgeous beats in no time.
+This app uses the Web Audio API to schedule real-time audio events in your browser. First enter a pattern on the sequencer, choose a tempo, and select a meter. Then hit Play and you'll be making gorgeous beats in no time.
