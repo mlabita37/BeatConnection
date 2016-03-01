@@ -2,10 +2,9 @@
 A Node.js, Express, and Mongoose drum sequencer. Create original beats right in your browser!
 
 ![](https://media.giphy.com/media/U5dS06n14JdOU/giphy.gif)
-Playing a new beat!
 
 ![](https://media.giphy.com/media/utQn5kbtgXsKA/giphy.gif)
-Entering a new pattern into the sequencer
+
 
 ###System dependencies
 bcryptjs: 2.3.0,
