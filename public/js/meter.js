@@ -11,7 +11,7 @@ function isSixteenths(){
     }
     sixteenths = !sixteenths;
     if (sixteenths == true){
-      $('#sixteenths').css('background-color', 'lime');
+      $('#sixteenths').css('background-color', 'slateblue');
     }else {
       $('#sixteenths').css('background-color', 'deepskyblue');
     }
@@ -31,7 +31,7 @@ function isEighths(){
     eighths = !eighths;
     console.log('eighths working');
     if (eighths == true){
-      $('#eighths').css('background-color', 'lime');
+      $('#eighths').css('background-color', 'slateblue');
     }else $('#eighths').css('background-color', 'deepskyblue');
   });
 }
@@ -48,7 +48,7 @@ function isQuarters(){
     }
     quarters = true;
     if (quarters == true){
-      $('#quarters').css('background-color', 'lime');
+      $('#quarters').css('background-color', 'slateblue');
     }else $('#quarters').css('background-color', 'deepskyblue');
   });
 }

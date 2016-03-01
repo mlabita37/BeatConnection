@@ -69,7 +69,7 @@ header {
 
 #main-container {
   width: 700px;
-  height: 520px;
+  height: 460px;
   margin: 30px auto;
   border-radius: 20px;
   overflow: auto;
@@ -139,7 +139,12 @@ label {
 	display: inline-block;
 	border-radius: 10px;
 }
-
+.light:nth-child(1),
+.light:nth-child(5),
+.light:nth-child(9),
+.light:nth-child(13){
+	background-color: cyan;
+}
 #tempo {
   margin: 20px auto;
 }
@@ -152,15 +157,19 @@ label {
 		background-color: deepskyblue;
 		border-radius: 20px;
 }
-
+#clearAll {
+	background-color: darkorange;
+}
 #quarters {
-	background-color: lime;
+	background-color: slateblue;
 }
 
 #playLoop {
+	background-color: limegreen;
 	padding: 4px 6px;
 }
 #stopLoop {
+	background-color: magenta;
 	font-size: 1em;
 	line-height: 1em;
 }
