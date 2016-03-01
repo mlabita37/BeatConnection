@@ -49,6 +49,7 @@ function playKick(kick, startTime, quarterNoteTime){
           playSound(kick, startTime);
         }else if (kickArray[i] == 1){
           playSound(kick, startTime + i*0.5*quarterNoteTime);
+          flashLights('kick'+(i+1), startTime + i*0.5*quarterNoteTime);
         }
       };
     }else{
