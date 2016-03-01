@@ -1,3 +1,5 @@
+/* Code copied from buffer-loader.js file, obtained from http://middleearmedia.com/timed-rhythms-with-web-audio-api-and-javascript/ */
+
 function BufferLoader(context, urlList, callback) {
 	this.context = context;
     this.urlList = urlList;

@@ -1,11 +1,10 @@
+/* Code modified from http://middleearmedia.com/timed-rhythms-with-web-audio-api-and-javascript/ */
 console.log("...rhythm.js loaded");
-
-window.onload = init;
 
 var context;
 var bufferLoader;
 
-function init() {
+$(function() {
     try {
         context = new AudioContext();
     }
@@ -42,6 +41,7 @@ function init() {
     allKick();
     clearAll();
 }
+);
 
 function playSound(buffer, time) {
     var source = context.createBufferSource();
@@ -75,6 +75,7 @@ if (play == true){
     playPerc(perc, startTime, quarterNoteTime);
     playTamb(tamb, startTime, quarterNoteTime);
     playCymbal(cymbal, startTime, quarterNoteTime);
+
 }else {
   console.log("Already playing!");
 }

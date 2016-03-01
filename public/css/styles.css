@@ -49,9 +49,8 @@ body {
 header {
   width: 100%;
   background-color: #333;
-  height: 50px;
-  padding-top: 14px;
-	padding-bottom: 10px;
+  height: 30px;
+  padding: 10px 0 12px 0;
 	overflow: auto;
 	text-align: center;
 }
@@ -97,8 +96,9 @@ header {
 	font-size: 0.75em;
 }
 
-h3 {
+label {
   color: white;
+	margin-right: 10px;
 }
 
 .row {

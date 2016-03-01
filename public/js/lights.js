@@ -1,5 +1,12 @@
 console.log("...lights.js loaded");
 
+// function flashLights(drum){
+//   var colorsArray = ['blue', 'red', 'green', 'orange', 'purple', 'pink', 'yellow', 'aqua'];
+//   var newColor = colorsArray[Math.floor(Math.random()*colorsArray.length)];
+//   $('#' + drum).css('background-color', newColor);
+// }
+
+
 function flashLights(drum){
   console.log("flash is working");
   $('#' + drum).css('background-color', '#4D4DFF');
