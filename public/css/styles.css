@@ -44,11 +44,12 @@ table {
 /*---------------------------*/
 body {
   font-family: 'Philosopher', sans-serif;
+	background-color: #B0BEC5;
 }
 
 header {
   width: 100%;
-  background-color: #333;
+  background-color: black;
   height: 30px;
   padding: 10px 0 12px 0;
 	overflow: auto;
@@ -61,27 +62,22 @@ header {
 }
 
 #title {
-  font-size: 2.5em;
-  font-family: 'Tangerine', cursive;
-  color: #f3f3f3;
+  font-size: 1.75em;
+  font-family: 'Krona One', sans-serif;
+  color: whitesmoke;
   margin: 0 auto;
 }
 
 #main-container {
-  width: 700px;
+  width: 760px;
   height: 460px;
-  margin: 30px auto;
+  margin: 50px auto;
   border-radius: 20px;
-  overflow: auto;
   z-index: -1;
   box-shadow: 1px 4px 37px #504A4B;
   color: #2c303b;
   text-align: center;
-  background: #4c4c4c; /* Old browsers */
-  background: -webkit-linear-gradient(#4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
-  background: -o-linear-gradient(#4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
-  background: linear-gradient(#4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+	background: black;
 }
 
 #main-sequencer {
@@ -92,17 +88,21 @@ header {
 
 .instrument {
   display: inline;
-  color: white;
+  color: whitesmoke;
 	font-size: 0.75em;
 }
 
 label {
-  color: white;
+  color: whitesmoke;
 	margin-right: 10px;
 }
 
 .row {
   margin: 0 auto;
+}
+
+.row:first-child {
+	padding-top: 26px;
 }
 
 .seq {
@@ -116,19 +116,22 @@ label {
 }
 
 .all {
-	width: 20px;
-	height: 20px;
-	border-radius: 30px;
-	border: 2px solid #F3F3F3;
-	font-size: 1.5em;
+	position: absolute;
+	font-size: 2.5em;
 	text-align: center;
 	padding: 0;
+	height: 20px;
+	width: 20px;
 	color: darkorange;
-	background: white;
+	margin: 27px 0 0 60px;
+	border: 1px solid whitesmoke;
+	border-radius: 20px;
+	line-height: 0.9em;
+	cursor: pointer;
 }
 
 .lites {
-	margin: 10px 0 0 29px;
+	margin: 10px 0 0 48px;
 	width: 700px;
 }
 
@@ -138,6 +141,7 @@ label {
 	background-color: white;
 	display: inline-block;
 	border-radius: 10px;
+		box-shadow: 1px 2px 5px #333;
 }
 .light:nth-child(1),
 .light:nth-child(5),

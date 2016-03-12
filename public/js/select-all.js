@@ -11,10 +11,12 @@ function allCymbal(){
     for(i=0; i < cymbal.length; i++){
       $(cymbal).val(1);
       $(cymbal).css('background-color', 'limegreen');
+      $('#allCymbal').css('color', 'limegreen');
     }
   }else {
     $(cymbal).val(0);
     $(cymbal).css('background-color', '#D1D0CE');
+    $('#allCymbal').css('color', 'darkorange');
   }
 });
 }
@@ -29,10 +31,12 @@ function allTamb(){
     for(i=0; i < tamb.length; i++){
       $(tamb).val(1);
       $(tamb).css('background-color', 'limegreen');
+      $('#allTamb').css('color', 'limegreen');
     }
   }else {
     $(tamb).val(0);
     $(tamb).css('background-color', '#D1D0CE');
+    $('#allTamb').css('color', 'darkorange');
   }
 });
 }
@@ -48,10 +52,12 @@ function allPerc(){
     for(i=0; i < perc.length; i++){
       $(perc).val(1);
       $(perc).css('background-color', 'limegreen');
+      $('#allPerc').css('color', 'limegreen');
     }
   }else {
     $(perc).val(0);
     $(perc).css('background-color', '#D1D0CE');
+    $('#allPerc').css('color', 'darkorange');
   }
 });
 }
@@ -66,10 +72,12 @@ function allHiHat(){
     for(i=0; i < hihat.length; i++){
       $(hihat).val(1);
       $(hihat).css('background-color', 'limegreen');
+      $('#allHiHat').css('color', 'limegreen');
     }
   }else {
     $(hihat).val(0);
     $(hihat).css('background-color', '#D1D0CE');
+    $('#allHiHat').css('color', 'darkorange');
   }
 });
 }
@@ -84,10 +92,12 @@ function allSnare(){
     for(i=0; i < snare.length; i++){
       $(snare).val(1);
       $(snare).css('background-color', 'limegreen');
+      $('#allSnare').css('color', 'limegreen');
     }
   }else {
     $(snare).val(0);
     $(snare).css('background-color', '#D1D0CE');
+    $('#allSnare').css('color', 'darkorange');
   }
 });
 }
@@ -102,10 +112,12 @@ function allKick(){
     for(i=0; i < kick.length; i++){
       $(kick).val(1);
       $(kick).css('background-color', 'limegreen');
+      $('#allKick').css('color', 'limegreen');
     }
   }else {
     $(kick).val(0);
     $(kick).css('background-color', '#D1D0CE');
+    $('#allKick').css('color', 'darkorange');
   }
 });
 }
