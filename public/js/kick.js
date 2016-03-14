@@ -67,3 +67,74 @@ function playKick(kick, startTime, quarterNoteTime){
       };
     }
   };
+
+  var i = 0;
+
+  function volumeUp(){
+  $('#kVolUp').on('click', function(){
+  	if (i < 10){
+  		i++;
+  		$('#kVol').text("\xa0\xa0Vol: " + i);
+    }
+  });
+  }
+
+  function volumeDown(){
+  $('#kVolDown').on('click', function(){
+    console.log('click working');
+    console.log(i);
+  	if (i > 0){
+  		i--;
+  		$('#kVol').text("\xa0\xa0Vol: " + i);
+    }
+  });
+  }
+
+  function distUp(){
+  $('#kDistUp').on('click', function(){
+  	if (i < 10){
+  		i++;
+  		$('#kDist').text("\xa0Dist: " + i);
+    }
+  });
+  }
+
+  function distDown(){
+  $('#kDistDown').on('click', function(){
+    console.log('click working');
+    console.log(i);
+  	if (i > 0){
+  		i--;
+  		$('#kDist').text("\xa0Dist: " + i);
+    }
+  });
+  }
+
+  function verbUp(){
+  $('#kVerbUp').on('click', function(){
+  	if (i < 10){
+  		i++;
+  		$('#kVerb').text("Verb: " + i);
+    }
+  });
+  }
+
+  function verbDown(){
+  $('#kVerbDown').on('click', function(){
+    console.log('click working');
+    console.log(i);
+  	if (i > 0){
+  		i--;
+  		$('#kVerb').text("Verb: " + i);
+    }
+  });
+  }
+
+  $(function(){
+  volumeUp();
+  volumeDown();
+  distUp();
+  distDown();
+  verbUp();
+  verbDown();
+  })
