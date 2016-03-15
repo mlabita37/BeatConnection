@@ -51,7 +51,7 @@ body {
 header {
   width: 100%;
   background-color: black;
-  height: 30px;
+  height: 50px;
   padding: 10px 0 12px 0;
 	overflow: auto;
 	text-align: center;
@@ -59,7 +59,7 @@ header {
 
 #login, #signup{
 	float: right;
-	margin: -20px 30px 0 0;
+	margin: -22px 30px 0 0;
 	color: white;
 	padding-bottom: 20px;
 	cursor: pointer;
@@ -68,14 +68,14 @@ header {
 #title {
   font-size: 1.75em;
   color: whitesmoke;
-  margin: 0 auto;
+  margin: 14px auto 0;
 	font-family: 'Krona One', sans-serif;
 }
 
 #main-container {
 	width: 760px;
 	height: 360px;
-	margin: 30px auto 1px;
+	margin: 60px auto 1px;
 	border-radius: 20px;
 	z-index: -1;
 	box-shadow: 1px 4px 37px #504A4B;
