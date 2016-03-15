@@ -165,7 +165,7 @@ label {
 }
 
 .controls {
-	background-color: mediumslateblue;
+	background-color: deepskyblue;
 	border-radius: 30px;
 	width: 30px;
 	height: 30px;
@@ -181,7 +181,7 @@ label {
 }
 
 #quarters {
-	background-color: deepskyblue;
+	background-color: mediumslateblue;
 }
 
 #playLoop {

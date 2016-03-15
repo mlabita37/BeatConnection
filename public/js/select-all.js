@@ -15,7 +15,7 @@ function allCymbal(){
     }
   }else {
     $(cymbal).val(0);
-    $(cymbal).css('background-color', '#D1D0CE');
+    $(cymbal).css('background-color', 'white');
     $('#allCymbal').css('color', 'darkorange');
   }
 });
@@ -35,7 +35,7 @@ function allTamb(){
     }
   }else {
     $(tamb).val(0);
-    $(tamb).css('background-color', '#D1D0CE');
+    $(tamb).css('background-color', 'white');
     $('#allTamb').css('color', 'darkorange');
   }
 });
@@ -56,7 +56,7 @@ function allPerc(){
     }
   }else {
     $(perc).val(0);
-    $(perc).css('background-color', '#D1D0CE');
+    $(perc).css('background-color', 'white');
     $('#allPerc').css('color', 'darkorange');
   }
 });
@@ -76,7 +76,7 @@ function allHiHat(){
     }
   }else {
     $(hihat).val(0);
-    $(hihat).css('background-color', '#D1D0CE');
+    $(hihat).css('background-color', 'white');
     $('#allHiHat').css('color', 'darkorange');
   }
 });
@@ -96,7 +96,7 @@ function allSnare(){
     }
   }else {
     $(snare).val(0);
-    $(snare).css('background-color', '#D1D0CE');
+    $(snare).css('background-color', 'white');
     $('#allSnare').css('color', 'darkorange');
   }
 });
@@ -116,7 +116,7 @@ function allKick(){
     }
   }else {
     $(kick).val(0);
-    $(kick).css('background-color', '#D1D0CE');
+    $(kick).css('background-color', 'white');
     $('#allKick').css('color', 'darkorange');
   }
 });
@@ -133,7 +133,7 @@ function clearAll(){
     var all = $('.seq');
       for (i=0; i<all.length; i++){
         $(all).val(0);
-        $(all).css('background-color', '#D1D0CE');
+        $(all).css('background-color', 'white');
       }
   });
 }

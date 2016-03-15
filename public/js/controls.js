@@ -14,7 +14,7 @@ function getValue(){
     $(this).css('background-color', "limegreen");
     $(this).val(1);
   }else{
-    $(this).css('background-color', "#D1D0CE");
+    $(this).css('background-color', "white");
     $(this).val(0);
   }
   console.log($(this).val());
