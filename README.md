@@ -1,9 +1,9 @@
 ###Beat Connection
 A Node.js, Express, and Mongoose drum sequencer. Create original beats right in your browser!
 
-![](https://media.giphy.com/media/U5dS06n14JdOU/giphy.gif)
+![](https://media.giphy.com/media/nGoESMRUmDSMw/giphy.gif)
 
-![](https://media.giphy.com/media/utQn5kbtgXsKA/giphy.gif)
+![](https://media.giphy.com/media/Qs3HTjEC9JbNe/giphy.gif)
 
 
 ###System dependencies
