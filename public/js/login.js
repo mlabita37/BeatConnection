@@ -15,8 +15,16 @@ $("#signup").on("click", function() {
 };
 
 function closeLogin(){
-$("#close").on("click", function() {
+$(".close.login").on("click", function() {
+  console.log("close login is working!");
   $("#login-modal").toggle();
+});
+}
+
+function closeSignup(){
+$(".close.signup").on("click", function() {
+  console.log("close signup is working!");
+  $("#signup-modal").toggle();
 });
 }
 
@@ -110,4 +118,5 @@ $(function(){
   openLogin();
   openSignup();
   closeLogin();
+  closeSignup();
 });
