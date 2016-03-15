@@ -28,15 +28,15 @@
   <body>
   <header>
     <div id="title">Beat Connection</div>
-    <!-- <button id="signup">Signup</button>
-    <button id="login">Login</button> -->
+    <div id="signup">Signup</div>
+    <div id="login">Login</div>
   </header>
 <% include ./partials/login %>
 <% include ./partials/signup %>
   <div id="main-container">
     <div id="main-sequencer">
       <div class="row">
-        <div id="allCymbal" class="all"> * </div>
+        <div id="allCymbal" class="all"> All </div>
         <div class="instrument">Cymbal</div>
         <button type="radio" class="seq cymbal" id="cymbal1" value="0"></button>
         <button type="radio" class="seq cymbal" id="cymbal2" value="0"></button>
@@ -56,8 +56,8 @@
         <button type="radio" class="seq cymbal" id="cymbal16" value="0"></button>
       </div>
       <div class="row">
-        <div id="allTamb" class="all"> * </div>
-        <div class="instrument">&nbsp;&nbsp;&nbsp;Tamb</div>
+        <div id="allTamb" class="all"> All </div>
+        <div class="instrument">Tamb</div>
         <button type="radio" class="seq tamb" id="tamb1" value="0"></button>
         <button type="radio" class="seq tamb" id="tamb2" value="0"></button>
         <button type="radio" class="seq tamb" id="tamb3" value="0"></button>
@@ -76,8 +76,8 @@
         <button type="radio" class="seq tamb" id="tamb16" value="0"></button>
       </div>
       <div class="row">
-        <div id="allPerc" class="all"> * </div>
-        <div class="instrument">&nbsp;&nbsp;&nbsp;Perc</div>
+        <div id="allPerc" class="all"> All </div>
+        <div class="instrument">Perc</div>
         <button type="radio" class="seq perc" id="perc1" value="0"></button>
         <button type="radio" class="seq perc" id="perc2" value="0"></button>
         <button type="radio" class="seq perc" id="perc3" value="0"></button>
@@ -96,8 +96,8 @@
         <button type="radio" class="seq perc" id="perc16" value="0"></button>
       </div>
       <div class="row">
-        <div id="allHiHat" class="all"> * </div>
-        <div class="instrument">&nbsp;Hi-hat</div>
+        <div id="allHiHat" class="all"> All </div>
+        <div class="instrument">Hi-hat</div>
         <button type="radio" class="seq hihat" id="hihat1" value="0"></button>
         <button type="radio" class="seq hihat" id="hihat2" value="0"></button>
         <button type="radio" class="seq hihat" id="hihat3" value="0"></button>
@@ -116,8 +116,8 @@
         <button type="radio" class="seq hihat" id="hihat16" value="0"></button>
       </div>
       <div class="row">
-        <div id="allSnare" class="all"> * </div>
-        <div class="instrument">&nbsp;&nbsp;Snare</div>
+        <div id="allSnare" class="all"> All </div>
+        <div class="instrument">Snare</div>
         <button type="radio" class="seq snare" id="snare1" value="0"></button>
         <button type="radio" class="seq snare" id="snare2" value="0"></button>
         <button type="radio" class="seq snare" id="snare3" value="0"></button>
@@ -136,8 +136,8 @@
         <button type="radio" class="seq snare" id="snare16" value="0"></button>
       </div>
       <div class="row">
-          <div id="allKick" class="all"> * </div>
-          <div class="instrument">&nbsp;&nbsp;&nbsp;Kick</div>
+          <div id="allKick" class="all"> All </div>
+          <div class="instrument">Kick</div>
           <button type="radio" class="seq kick" id="kick1" value="0"></button>
           <button type="radio" class="seq kick" id="kick2" value="0"></button>
           <button type="radio" class="seq kick" id="kick3" value="0"></button>
@@ -182,7 +182,7 @@
         <input type="button" class="controls" value="&#9834;" id="eighths"/>
         <input type="button" class="controls" value="&#9833;" id="quarters"/>
         <input type="button" class="controls" value="&#9658;" id="playLoop"/>
-        <input type="button" class="controls" value="&#9632;" id="stopLoop"/>
+        <input type="button" class="controls" value="&#9724;" id="stopLoop"/>
       </div>
       </div>
   </div>

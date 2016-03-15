@@ -7,7 +7,7 @@ $("#login").on("click", function() {
 });
 };
 
-function openLogin(){
+function openSignup(){
 $("#signup").on("click", function() {
   console.log("This modal is working");
   $("#signup-modal").toggle();
@@ -96,10 +96,9 @@ function setLogInFormHandler(){
     var userData = {username: usernameText, password: passwordText};
 
     logInUser(usernameText, passwordText, function(data){
-
       $.cookie('token', data.token);  // save the token as a cookie
-
       console.log('Token:', $.cookie('token') );
+      $("#login-modal").toggle();
     });
 
   });
@@ -109,5 +108,6 @@ $(function(){
   setCreateUserFormHandler();
   setLogInFormHandler();
   openLogin();
+  openSignup();
   closeLogin();
 });
