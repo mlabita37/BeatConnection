@@ -4,6 +4,7 @@ function openLogin(){
 $("#login").on("click", function() {
   console.log("This modal is working");
   $("#login-modal").toggle();
+  $("#title").css('color', 'mediumslateblue');
 });
 };
 
@@ -11,6 +12,7 @@ function openSignup(){
 $("#signup").on("click", function() {
   console.log("This modal is working");
   $("#signup-modal").toggle();
+  $("#title").css('color', 'mediumslateblue');
 });
 };
 
@@ -18,6 +20,7 @@ function closeLogin(){
 $(".close.login").on("click", function() {
   console.log("close login is working!");
   $("#login-modal").toggle();
+  $("#title").css('color', 'white');
 });
 }
 
@@ -25,6 +28,7 @@ function closeSignup(){
 $(".close.signup").on("click", function() {
   console.log("close signup is working!");
   $("#signup-modal").toggle();
+  $("#title").css('color', 'white');
 });
 }
 

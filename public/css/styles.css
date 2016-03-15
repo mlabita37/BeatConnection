@@ -55,6 +55,7 @@ header {
   padding: 10px 0 12px 0;
 	overflow: auto;
 	text-align: center;
+	font-family: 'Krona One', sans-serif;
 }
 
 #login, #signup{
@@ -69,7 +70,6 @@ header {
   font-size: 1.75em;
   color: whitesmoke;
   margin: 14px auto 0;
-	font-family: 'Krona One', sans-serif;
 }
 
 #main-container {
@@ -103,6 +103,7 @@ label {
   color: whitesmoke;
 	padding-top: 10px;
 	margin-right: 10px;
+	font-family: 'Krona One', sans-serif;
 }
 
 .row {
@@ -165,14 +166,18 @@ label {
 }
 
 .controls {
+	font-family: 'Krona One', sans-serif;
 	background-color: deepskyblue;
 	border-radius: 30px;
 	width: 30px;
 	height: 30px;
 	text-align: center;
 	font-size: 1em;
-	line-height: 1em;
+	line-height: 1.9em;
 	font-weight: bolder;
+	display: inline-block;
+	border: 1px solid white;
+	cursor: pointer;
 }
 
 #clearAll {
@@ -191,7 +196,6 @@ label {
 
 #stopLoop {
 	background-color: magenta;
-	line-height: 0.875em;
 }
 
 #fx-container {
@@ -217,8 +221,9 @@ label {
 .channel-title {
 	font-size: 0.75em;
 	color: white;
-	margin: 5px auto;
+	margin: 9px auto 3px;
 	text-align: center;
+	font-family: 'Krona One', sans-serif;
 }
 
 p {
