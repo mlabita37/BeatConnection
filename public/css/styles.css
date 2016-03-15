@@ -135,7 +135,7 @@ label {
 	line-height: 1.7em;
 	text-align: center;
 	color: darkorange;
-	border: 2px solid whitesmoke;
+	border: 2px solid deepskyblue;
 	border-radius: 20px;
 	cursor: pointer;
 }
@@ -148,10 +148,10 @@ label {
 .light {
 	width: 30px;
 	height: 10px;
-	background-color: white;
+	background-color: deepskyblue;
 	display: inline-block;
 	border-radius: 10px;
-		box-shadow: 1px 2px 5px #333;
+	box-shadow: 1px 2px 5px #333;
 }
 .light:nth-child(1),
 .light:nth-child(5),
@@ -165,7 +165,7 @@ label {
 }
 
 .controls {
-	background-color: deepskyblue;
+	background-color: mediumslateblue;
 	border-radius: 30px;
 	width: 30px;
 	height: 30px;
@@ -177,14 +177,16 @@ label {
 
 #clearAll {
 	background-color: darkorange;
+	margin: 0 20px 0 14px;
 }
 
 #quarters {
-	background-color: slateblue;
+	background-color: deepskyblue;
 }
 
 #playLoop {
 	background-color: limegreen;
+	margin-left: 20px;
 }
 
 #stopLoop {
@@ -243,6 +245,7 @@ p {
   margin: 0;
 	display: inline-block;
 	cursor: pointer;
+	background-color: deepskyblue;
 }
 
 .volMeter{
