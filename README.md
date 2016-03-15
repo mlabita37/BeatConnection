@@ -1,9 +1,9 @@
 ###Beat Connection
-A Node.js, Express, and Mongoose drum sequencer. Create original beats right in your browser!
+A virtual drum machine created using Node.js, Express, Mongoose, jQuery, and the Web Audio API. Program beats right in your browser using an intuitive 16-bar grid sequencer. Users may signup and login in order to save and load beats and FX parameters. FX controls include volume, distortion, and reverb for each instrument channel. Includes tempo control and meter options which allows for quarter, eighth, or sixteen note playback.
 
-![](https://media.giphy.com/media/nGoESMRUmDSMw/giphy.gif)
+![](https://media.giphy.com/media/U5dS06n14JdOU/giphy.gif)
 
-![](https://media.giphy.com/media/Qs3HTjEC9JbNe/giphy.gif)
+![](https://media.giphy.com/media/utQn5kbtgXsKA/giphy.gif)
 
 
 ###System dependencies
@@ -15,4 +15,4 @@ express: 4.13.4,
 mongoose: 4.4.4
 
 ###About   
-This app uses the Web Audio API to schedule real-time audio events in your browser. First enter a pattern on the sequencer, choose a tempo, and select a meter. Then hit Play and you'll be making gorgeous beats in no time.
+This app uses the Web Audio API to add FX and schedule real-time audio events in your browser. First enter a pattern on the sequencer, choose a tempo, and select a meter (either a quarter, eighth, or sixteenth). Then hit Play and you'll be making funky beats in no time!
