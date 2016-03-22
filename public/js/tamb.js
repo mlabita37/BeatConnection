@@ -71,3 +71,75 @@ function playTamb(tamb, startTime, quarterNoteTime){
         }
 
 }
+
+// Volume level
+  var tVol = 5;
+  function tVolUp(){
+  $('#tVolUp').on('click', function(){
+    if (tVol < 10){
+  		tVol++;
+      console.log(tVol);
+  		$('#tVol').text("\xa0\xa0Vol: " + tVol);
+    }
+  });
+  }
+
+  function tVolDown(){
+  $('#tVolDown').on('click', function(){
+    if (tVol > 0){
+  	  tVol--;
+      tVol = tVol.toFixed();
+  		$('#tVol').text("\xa0\xa0Vol: " + tVol);
+      console.log(tVol);
+    }
+  });
+  }
+
+// Distortion level
+var tDist = 0;
+  function tDistUp(){
+  $('#tDistUp').on('click', function(){
+  	if (tDist < 10){
+  		tDist++;
+  		$('#tDist').text("\xa0Dist: " + tDist);
+    }
+  });
+  }
+
+  function tDistDown(){
+  $('#tDistDown').on('click', function(){
+  	if (tDist > 0){
+  		tDist--;tDist
+  		$('#tDist').text("\xa0Dist: " + tDist);
+    }
+  });
+  }
+
+// Reverb level
+var tVerb = 0;
+  function tVerbUp(){
+  $('#tVerbUp').on('click', function(){
+  	if (tVerb < 10){
+  		tVerb++;
+  		$('#tVerb').text("Verb: " + tVerb);
+    }
+  });
+  }
+
+  function tVerbDown(){
+  $('#tVerbDown').on('click', function(){
+  	if (tVerb > 0){
+  		tVerb--;
+  		$('#tVerb').text("Verb: " + tVerb);
+    }
+  });
+  }
+
+  $(function(){
+  tVolUp();
+  tVolDown();
+  tDistUp();
+  tDistDown();
+  tVerbUp();
+  tVerbDown();
+  })

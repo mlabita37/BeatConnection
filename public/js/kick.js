@@ -68,73 +68,74 @@ function playKick(kick, startTime, quarterNoteTime){
     }
   };
 
-  var i = 0;
-
-  function volumeUp(){
+// Volume level
+  var kVol = 5;
+  function kVolUp(){
   $('#kVolUp').on('click', function(){
-  	if (i < 10){
-  		i++;
-  		$('#kVol').text("\xa0\xa0Vol: " + i);
+    if (kVol < 10){
+  		kVol++;
+      console.log(kVol);
+  		$('#kVol').text("\xa0\xa0Vol: " + kVol);
     }
   });
   }
 
-  function volumeDown(){
+  function kVolDown(){
   $('#kVolDown').on('click', function(){
-    console.log('click working');
-    console.log(i);
-  	if (i > 0){
-  		i--;
-  		$('#kVol').text("\xa0\xa0Vol: " + i);
+    if (kVol > 0){
+  	  kVol--;
+      kVol = kVol.toFixed();
+  		$('#kVol').text("\xa0\xa0Vol: " + kVol);
+      console.log(kVol);
     }
   });
   }
 
-  function distUp(){
+// Distortion level
+var kDist = 0;
+  function kDistUp(){
   $('#kDistUp').on('click', function(){
-  	if (i < 10){
-  		i++;
-  		$('#kDist').text("\xa0Dist: " + i);
+  	if (kDist < 10){
+  		kDist++;
+  		$('#kDist').text("\xa0Dist: " + kDist);
     }
   });
   }
 
-  function distDown(){
+  function kDistDown(){
   $('#kDistDown').on('click', function(){
-    console.log('click working');
-    console.log(i);
-  	if (i > 0){
-  		i--;
-  		$('#kDist').text("\xa0Dist: " + i);
+  	if (kDist > 0){
+  		kDist--;kDist
+  		$('#kDist').text("\xa0Dist: " + kDist);
     }
   });
   }
 
-  function verbUp(){
+// Reverb level
+var kVerb = 0;
+  function kVerbUp(){
   $('#kVerbUp').on('click', function(){
-  	if (i < 10){
-  		i++;
-  		$('#kVerb').text("Verb: " + i);
+  	if (kVerb < 10){
+  		kVerb++;
+  		$('#kVerb').text("Verb: " + kVerb);
     }
   });
   }
 
-  function verbDown(){
+  function kVerbDown(){
   $('#kVerbDown').on('click', function(){
-    console.log('click working');
-    console.log(i);
-  	if (i > 0){
-  		i--;
-  		$('#kVerb').text("Verb: " + i);
+  	if (kVerb > 0){
+  		kVerb--;
+  		$('#kVerb').text("Verb: " + kVerb);
     }
   });
   }
 
   $(function(){
-  volumeUp();
-  volumeDown();
-  distUp();
-  distDown();
-  verbUp();
-  verbDown();
+  kVolUp();
+  kVolDown();
+  kDistUp();
+  kDistDown();
+  kVerbUp();
+  kVerbDown();
   })
