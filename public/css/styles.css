@@ -45,7 +45,7 @@ table {
 ----------------------------------------------------------------------*/
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-color: #EDE7F6;
+	background-color: #fff;
 }
 
 header {
@@ -365,5 +365,5 @@ input[type=submit]{
 
 @media screen
   and (min-device-width: 1200px)  {
-		
+
 }
