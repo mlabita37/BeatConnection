@@ -45,7 +45,7 @@ function playLoop(){
 function getTime(){
   var tempo = getTempo();
   var bar = 8/tempo;
-  var time = bar * 60;
+  var time = bar * 60; // Mulitply bar by 60 seconds
   time = time * 2000;
   return time;
 }

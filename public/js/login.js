@@ -1,12 +1,18 @@
 console.log('...login.js loaded');
 
-function openLogin(){
-$("#login").on("click", function() {
-  console.log("This modal is working");
-  $("#login-modal").toggle();
-  $("#title").css('color', 'mediumslateblue');
+function toggleLogin(){
+$("#login").on('click', function(){
+    $("#login-modal").toggle();
 });
 };
+
+function toggleNav(){
+  $("#open-nav").on('click', function(){
+    $('nav').toggle();
+    open = !open;
+    isOpen();
+});
+}
 
 function openSignup(){
 $("#signup").on("click", function() {
@@ -119,7 +125,7 @@ function setLogInFormHandler(){
 $(function(){
   setCreateUserFormHandler();
   setLogInFormHandler();
-  openLogin();
+  toggleLogin();
   openSignup();
   closeLogin();
   closeSignup();

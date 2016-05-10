@@ -4,7 +4,7 @@ console.log("...rhythm.js loaded");
 var context;
 var bufferLoader;
 
-$(function() {
+$(function() { // jQuery onLoad function
     try {
         context = new AudioContext();
     }

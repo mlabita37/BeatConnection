@@ -19,7 +19,7 @@ function isSixteenths(){
 }
 
 // isEighths
-var eighths = false;
+var eighths = true;
 function isEighths(){
   $('#eighths').click(function(){
     if (sixteenths === true || quarters === true){
@@ -37,7 +37,7 @@ function isEighths(){
 }
 
 // isQuarters
-var quarters = true;
+var quarters = false;
 function isQuarters(){
   $('#quarters').click(function(){
     if (sixteenths === true || eighths === true){
