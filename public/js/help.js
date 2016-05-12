@@ -6,6 +6,14 @@ $('#help').on('click', function(){
 });
 }
 
+function closeSignup(){
+$(".close.help").on("click", function() {
+  console.log("close help is working!");
+  $("#help-modal").toggle();
+  $("#title").css('color', 'white');
+});
+}
+
 $(function(){
   toggleMenu();
 });
