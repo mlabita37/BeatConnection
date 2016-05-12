@@ -303,7 +303,7 @@ p {
 
 
 /*------ Login modal -----*/
-#login-modal, #signup-modal {
+#login-modal, #signup-modal, #help-modal {
   top: 0;
   left: 0;
   position: fixed;
