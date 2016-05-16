@@ -37,7 +37,7 @@ function playKick(kick, startTime, quarterNoteTime){
         playSound(kick, startTime);
       }else if (kickArray[i] == 1){
         playSound(kick, startTime + i*0.25*quarterNoteTime);
-        flashLights('kick'+(i+1));
+        // flashLights('kick'+(i+1));
       }
     };
     }else if(eighths == true){
@@ -52,7 +52,7 @@ function playKick(kick, startTime, quarterNoteTime){
           playSound(kick, startTime);
         }else if (kickArray[i] == 1){
           playSound(kick, startTime + i*0.5*quarterNoteTime);
-          flashLights('kick'+(i+1), startTime + i*0.5*quarterNoteTime);
+          // flashLights('kick'+(i+1), startTime + i*0.5*quarterNoteTime);
         }
       };
     }else{
@@ -65,7 +65,7 @@ function playKick(kick, startTime, quarterNoteTime){
           playSound(kick, startTime);
         }else if (kickArray[i] == 1){
           playSound(kick, startTime + i*quarterNoteTime);
-          flashLights('kick'+(i+1), startTime + i*quarterNoteTime);
+          // flashLights('kick'+(i+1), startTime + i*quarterNoteTime);
         }
       };
     }
@@ -172,7 +172,6 @@ var snare1 = $('#snare1').val(),
           playSound(snare, startTime);
         }else if (snareArray[i] == 1){
           playSound(snare, startTime + i*0.25*quarterNoteTime);
-          flashLights('snare'+(i+1));
         }
       };
       }else if(eighths == true){
@@ -187,7 +186,6 @@ var snare1 = $('#snare1').val(),
             playSound(snare, startTime);
           }else if (snareArray[i] == 1){
             playSound(snare, startTime + i*0.5*quarterNoteTime);
-            flashLights('snare'+(i+1));
           }
         };
       }else{
@@ -200,7 +198,6 @@ var snare1 = $('#snare1').val(),
             playSound(snare, startTime);
           }else if (snareArray[i] == 1){
             playSound(snare, startTime + i*quarterNoteTime);
-            flashLights('snare'+(i+1));
           }
         };
       }
@@ -306,7 +303,6 @@ function playHiHat(hihat, startTime, quarterNoteTime){
       playSound(hihat, startTime);
     }else if (hiHatArray[i] == 1){
       playSound(hihat, startTime + i*0.25*quarterNoteTime);
-      flashLights('hihat'+(i+1));
     }
   };
   }else if(eighths == true){
@@ -321,7 +317,6 @@ function playHiHat(hihat, startTime, quarterNoteTime){
       playSound(hihat, startTime);
     }else if (hiHatArray[i] == 1){
       playSound(hihat, startTime + i*0.5*quarterNoteTime);
-      flashLights('hihat'+(i+1));
     }
   };
   }else{
@@ -334,7 +329,6 @@ function playHiHat(hihat, startTime, quarterNoteTime){
         playSound(hihat, startTime);
       }else if (hiHatArray[i] == 1){
         playSound(hihat, startTime + i*quarterNoteTime);
-        flashLights('hihat'+(i+1));
       }
     };
   }
@@ -443,7 +437,6 @@ perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16
         playSound(perc, startTime);
       }else if (percArray[i] == 1){
         playSound(perc, startTime + i*0.25*quarterNoteTime);
-        flashLights('perc'+(i+1));
       }
     };
     }else if(eighths == true){
@@ -458,7 +451,6 @@ perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16
           playSound(perc, startTime);
         }else if (percArray[i] == 1){
           playSound(perc, startTime + i*0.5*quarterNoteTime);
-          flashLights('perc'+(i+1));
         }
       };
     }else{
@@ -471,7 +463,6 @@ perc9, perc10, perc11, perc12, perc13, perc14, perc15, perc16
           playSound(perc, startTime);
         }else if (percArray[i] == 1){
           playSound(perc, startTime + i*quarterNoteTime);
-          flashLights('perc'+(i+1));
         }
       };
     }
@@ -579,7 +570,6 @@ function playTamb(tamb, startTime, quarterNoteTime){
             playSound(tamb, startTime);
           }else if (tambArray[i] == 1){
             playSound(tamb, startTime + i*0.25*quarterNoteTime);
-            flashLights('tamb'+(i+1));
           }
         };
         }else if(eighths == true){
@@ -594,7 +584,6 @@ function playTamb(tamb, startTime, quarterNoteTime){
               playSound(tamb, startTime);
             }else if (tambArray[i] == 1){
               playSound(tamb, startTime + i*0.5*quarterNoteTime);
-              flashLights('tamb'+(i+1));
             }
           };
         }else{
@@ -607,7 +596,6 @@ function playTamb(tamb, startTime, quarterNoteTime){
               playSound(tamb, startTime);
             }else if (tambArray[i] == 1){
               playSound(tamb, startTime + i*quarterNoteTime);
-              flashLights('tamb'+(i+1));
             }
           };
         }
@@ -715,7 +703,6 @@ function playCymbal(cymbal, startTime, quarterNoteTime){
           playSound(cymbal, startTime);
         }else if (cymbalArray[i] == 1){
           playSound(cymbal, startTime + i*0.25*quarterNoteTime);
-          flashLights('cymbal'+(i+1));
         }
       };
 
@@ -731,7 +718,6 @@ function playCymbal(cymbal, startTime, quarterNoteTime){
             playSound(cymbal, startTime);
           }else if (cymbalArray[i] == 1){
             playSound(cymbal, startTime + i*0.5*quarterNoteTime);
-            flashLights('cymbal'+(i+1));
           }
         };
 
@@ -745,7 +731,6 @@ function playCymbal(cymbal, startTime, quarterNoteTime){
             playSound(cymbal, startTime);
           }else if (cymbalArray[i] == 1){
             playSound(cymbal, startTime + i*quarterNoteTime);
-            flashLights('cymbal'+(i+1));
           }
         };
       }

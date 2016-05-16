@@ -37,7 +37,7 @@ function openHelp(){
 
 // Close Help
 function closeHelp(){
-  $('.close.help').on('click', function(){
+  $('#close-help').on('click', function(){
     $('#help-modal').toggle();
   });
 };
