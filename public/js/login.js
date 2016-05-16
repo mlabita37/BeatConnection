@@ -1,43 +1,40 @@
 console.log('...login.js loaded');
 
-function toggleLogin(){
+function openLogin(){
 $("#login").on('click', function(){
     $("#login-modal").toggle();
 });
 };
 
-function toggleNav(){
-  $("#open-nav").on('click', function(){
-    $('nav').toggle();
-    open = !open;
-    isOpen();
-});
-}
+function closeLogin(){
+  $('.close.login').on('click', function(){
+    $('#login-modal').toggle();
+  });
+};
 
 function openSignup(){
-$("#signup").on("click", function() {
-  console.log("This modal is working");
-  $("#signup-modal").toggle();
-  $("#title").css('color', 'mediumslateblue');
+$("#signup").on('click', function(){
+    $("#signup-modal").toggle();
 });
 };
 
-function closeLogin(){
-$(".close.login").on("click", function() {
-  console.log("close login is working!");
-  $("#login-modal").toggle();
-  $("#title").css('color', 'white');
-});
-}
-
 function closeSignup(){
-$(".close.signup").on("click", function() {
-  console.log("close signup is working!");
-  $("#signup-modal").toggle();
-  $("#title").css('color', 'white');
+  $('.close.signup').on('click', function(){
+    $('#signup-modal').toggle();
+  });
+};
+
+function openMenu(){
+  $('#help').on('click', function(){
+    $('#help-modal').toggle();
 });
 }
 
+function closeMenu(){
+  $('.close.help').on('click', function(){
+    $('help-modal').toggle();
+  });
+};
 
 // Send request to create a user
 function createUser(userData, callback){
@@ -125,8 +122,10 @@ function setLogInFormHandler(){
 $(function(){
   setCreateUserFormHandler();
   setLogInFormHandler();
-  toggleLogin();
-  openSignup();
+  openLogin();
   closeLogin();
+  openSignup();
   closeSignup();
+  openMenu();
+  closeMenu();
 });
