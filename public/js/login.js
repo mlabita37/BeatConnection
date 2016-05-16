@@ -1,38 +1,44 @@
 console.log('...login.js loaded');
 
+// Open Login
 function openLogin(){
 $("#login").on('click', function(){
     $("#login-modal").toggle();
 });
 };
 
+// Close Login
 function closeLogin(){
   $('.close.login').on('click', function(){
     $('#login-modal').toggle();
   });
 };
 
+// Open Signup
 function openSignup(){
 $("#signup").on('click', function(){
     $("#signup-modal").toggle();
 });
 };
 
+// Close Signup
 function closeSignup(){
   $('.close.signup').on('click', function(){
     $('#signup-modal').toggle();
   });
 };
 
-function openMenu(){
+// Open Help
+function openHelp(){
   $('#help').on('click', function(){
     $('#help-modal').toggle();
 });
 }
 
-function closeMenu(){
+// Close Help
+function closeHelp(){
   $('.close.help').on('click', function(){
-    $('help-modal').toggle();
+    $('#help-modal').toggle();
   });
 };
 
@@ -48,6 +54,7 @@ function createUser(userData, callback){
   });
 }
 
+// Create Form Handler
 function setCreateUserFormHandler(){
   $('form#signup-form').on('submit', function(e){
     e.preventDefault();
@@ -74,6 +81,7 @@ function setCreateUserFormHandler(){
   });
 }
 
+// Update User
 function updateUser(userData, callback){
   $.ajax({
     method: 'patch',
@@ -85,6 +93,7 @@ function updateUser(userData, callback){
   });
 }
 
+// Login User
 function logInUser(usernameAttempt, passwordAttempt, callback){
   $.ajax({
     method: 'post',
@@ -96,6 +105,7 @@ function logInUser(usernameAttempt, passwordAttempt, callback){
   });
 }
 
+// Login Form Handler
 function setLogInFormHandler(){
   $('form#login-form').on('submit', function(e){
     e.preventDefault();
@@ -126,6 +136,6 @@ $(function(){
   closeLogin();
   openSignup();
   closeSignup();
-  openMenu();
-  closeMenu();
+  openHelp();
+  closeHelp();
 });
